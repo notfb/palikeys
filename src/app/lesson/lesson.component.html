@@ -1,0 +1,23 @@
+<div class="pk-padding">
+  <mat-card style="text-align: center">
+    <mat-card-title>
+      <div>Lesson {{lessonNumber}}</div>
+      <div style="color: red;">{{errorMessage}}</div>
+    </mat-card-title>
+    <mat-card-content>
+      <textarea title="Lesson" rows="10" cols="50" id="lessonTextArea" autofocus readonly
+                (keypress)="onKey($event)"
+                style="resize: none; font-size: 1.5em; font-family: 'Courier New'">{{lesson}}</textarea>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-grid-list cols="2" rowHeight="20px">
+        <mat-grid-tile style="text-align: left">
+          <a *ngIf="lessonNumber > 1" href="/lesson/{{lessonNumber - 1}}">Previous</a>
+        </mat-grid-tile>
+        <mat-grid-tile style="text-align: right">
+          <a *ngIf="lessonNumber < MAX_LESSON" href="/lesson/{{lessonNumber + 1}}">Next</a>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-footer>
+  </mat-card>
+</div>

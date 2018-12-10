@@ -20,7 +20,6 @@ export class LessonComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private lessonService: LessonService) {
-    super();
   }
 
   ngOnInit() {

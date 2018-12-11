@@ -10,4 +10,8 @@ export class ScoreServiceMock {
   get(id: string): Observable<Score> {
     return of({id: 'mockId', username: 'mockUser', score: 2342});
   }
+
+  list(id: string): Observable<Score[]> {
+    return of([{id: 'mockId', username: 'mockUser', score: 2342}]);
+  }
 }

@@ -15,6 +15,12 @@ export class ScoreService {
   }
 
   update(id: string, score: number): Observable<Object> {
+    // FIXME: Why am I seeing the log message but no requests???
+    // Even when I set the service worker to 'bypass for network'
+    console.log('fooo', score, id);
+    this.http.get(`${ScoreService.BASE_URL}/${id}`);
+    this.http.put(`${ScoreService.BASE_URL}/${id}`, {score});
+    this.http.post(`${ScoreService.BASE_URL}/${id}`, {score});
     return this.http.patch(`${ScoreService.BASE_URL}/${id}`, {score});
   }
 

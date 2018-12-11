@@ -14,10 +14,12 @@ export class LessonComponent implements OnInit {
   }
 
   ngOnInit() {
+    // TODO: get by username
     this.scoreService.get('d3zDQ8jIeqKKNxICAW3I').subscribe((score: Score) => this.score = score);
   }
 
   onScoreChanged(score: number) {
-    this.scoreService.update(this.score.id, score);
+    // TODO: update by username / id
+    this.scoreService.update('d3zDQ8jIeqKKNxICAW3I', score);
   }
 }

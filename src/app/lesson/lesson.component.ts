@@ -94,6 +94,7 @@ export class LessonComponent implements OnInit {
     textArea.setSelectionRange(0, 0);
     this.cursorPos = 0;
     this.errorMessage = 'You missed a character, please start over!';
+    this.score = this.score > 10 ? this.score - 10 : 0;
   }
 
   private correctKey(textArea: HTMLTextAreaElement, key: string) {

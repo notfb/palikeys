@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {LessonService} from './lesson.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Error} from 'tslint/lib/error';
+import {KeyboardLayoutType} from './_models/keyboard.model';
+
 
 // TODO: if tab is activated make sure text area has focus again
 @Component({
@@ -16,6 +18,7 @@ export class LessonComponent implements OnInit {
   lessonNumber = 1;
   lesson = '';
   cursorPos = 0;
+  layout: KeyboardLayoutType = 'qwerty';
   errorMessage = '';
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -31,26 +34,42 @@ export class LessonComponent implements OnInit {
     );
   }
 
-  onKey(event: { key: string }) {
+  onKey({key}: { key: string }) {
     const textArea = document.getElementById('lessonTextArea') as (HTMLTextAreaElement | null);
     if (!textArea) {
       throw new Error('Failed to get lessonTextArea HTML element');
     }
-    this.errorMessage = '';
+    this.clearError();
 
-    // if the user does not press the space button, that's fine
-    if (this.lesson.charAt(this.cursorPos) === ' ' && this.lesson.charAt(this.cursorPos + 1) === event.key) {
+    if (this.matchesLessonWithSpace(key, this.cursorPos)) {
       this.cursorPos++;
       textArea.setSelectionRange(0, ++this.cursorPos);
-    } else if (this.lesson.charAt(this.cursorPos) === event.key) {
+    } else if (this.matchesLesson(key, this.cursorPos)) {
       textArea.setSelectionRange(0, ++this.cursorPos);
     } else {
-      // we are strict about making errors -> generate new lesson and restart
-      this.lesson = this.lessonService.make(this.lessonNumber);
-      textArea.setSelectionRange(0, 0);
-      this.cursorPos = 0;
-      this.errorMessage = 'You missed a character, please start over!';
+      this.resetAndDisplayError(textArea);
     }
+  }
+
+  // if the user does not press the space button, that's fine
+  private matchesLessonWithSpace(key: string, cursorPos: number) {
+    return this.matchesLesson(' ', cursorPos) && this.matchesLesson(key, cursorPos + 1);
+  }
+
+  private matchesLesson(key: string, cursorPos: number) {
+    return this.lesson.charAt(cursorPos) === key;
+  }
+
+  // we are strict about making errors -> generate new lesson and restart
+  private resetAndDisplayError(textArea: HTMLTextAreaElement) {
+    this.lesson = this.lessonService.make(this.lessonNumber);
+    textArea.setSelectionRange(0, 0);
+    this.cursorPos = 0;
+    this.errorMessage = 'You missed a character, please start over!';
+  }
+
+  private clearError() {
+    this.errorMessage = '';
   }
 
 }

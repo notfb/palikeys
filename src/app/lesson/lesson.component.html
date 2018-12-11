@@ -5,9 +5,9 @@
       <div style="font-size: 0.7em; color: grey">Score: {{score}}</div>
       <div style="color: green;" *ngIf="finished">
         Well done - Lesson completed!
-        <a href="{{makeLessonLink(0)}}">Restart</a>
+        <a routerLink="{{makeLessonLink(0)}}">Restart</a>
         &nbsp;
-        <a *ngIf="lessonNumber < MAX_LESSON" href="{{makeLessonLink(1)}}">Next</a>
+        <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">Next</a>
       </div>
       <div style="color: red;" *ngIf="errorMessage">{{errorMessage}}</div>
     </mat-card-title>
@@ -19,7 +19,7 @@
     <mat-card-footer>
       <mat-grid-list cols="3" rowHeight="20px" class="pk-padding-bottom-s">
         <mat-grid-tile style="text-align: left">
-          <a *ngIf="lessonNumber > 1" href="{{makeLessonLink(-1)}}">Previous</a>
+          <a *ngIf="lessonNumber > 1" routerLink="{{makeLessonLink(-1)}}">Previous</a>
         </mat-grid-tile>
         <mat-grid-tile style="text-align: center">
           <label for="keyboardLayoutSelect" class="pk-padding-right-xs">Layout:</label>
@@ -28,7 +28,7 @@
           </select>
         </mat-grid-tile>
         <mat-grid-tile style="text-align: right">
-          <a *ngIf="lessonNumber < MAX_LESSON" href="{{makeLessonLink(1)}}">Next</a>
+          <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">Next</a>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-card-footer>

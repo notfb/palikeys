@@ -38,13 +38,14 @@ export class LessonComponent implements OnInit {
         this.layoutType = params['layoutType'];
         this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
         this.finished = false;
+        this.cursorPos = 0;
         this.getTextArea().focus();
       }
     );
   }
 
   onKeyboardLayoutChange() {
-    this.router.navigate(['lesson', this.layoutType, this.lessonNumber]);
+    return this.router.navigate(['lesson', this.layoutType, this.lessonNumber]);
   }
 
   // The text area needs to keep the focus to make sure key events are send to it.

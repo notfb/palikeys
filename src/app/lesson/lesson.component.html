@@ -12,7 +12,7 @@
       <div style="color: red;" *ngIf="errorMessage">{{errorMessage}}</div>
     </mat-card-title>
     <mat-card-content>
-      <textarea title="Lesson" rows="10" cols="50" id="lessonTextArea" autofocus readonly
+      <textarea #textArea id="lessonTextArea" title="Lesson" rows="10" cols="50" autofocus readonly
                 (keypress)="onKey($event)" (blur)="onTextAreaBlur()"
                 style="resize: none; font-size: 1.5em; font-family: 'Courier New'">{{lesson}}</textarea>
     </mat-card-content>

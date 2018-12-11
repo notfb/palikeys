@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {LessonService} from './lesson.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {Error} from 'tslint/lib/error';
 import {KeyboardLayoutType} from './_models/keyboard.model';
 
 
@@ -26,6 +25,8 @@ export class LessonComponent implements OnInit {
   score = 0;
   finished = false;
 
+  @ViewChild('textArea') private textarea: ElementRef<HTMLTextAreaElement>;
+
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private lessonService: LessonService) {
@@ -39,7 +40,7 @@ export class LessonComponent implements OnInit {
         this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
         this.finished = false;
         this.cursorPos = 0;
-        this.getTextArea().focus();
+        this.textarea.nativeElement.focus();
       }
     );
   }
@@ -50,11 +51,12 @@ export class LessonComponent implements OnInit {
 
   // The text area needs to keep the focus to make sure key events are send to it.
   onTextAreaBlur(): void {
-    this.getTextArea().focus();
+    this.textarea.nativeElement.focus();
+
   }
 
   onKey({key}: { key: string }) {
-    const textArea = this.getTextArea();
+    const textArea = this.textarea.nativeElement;
 
     if (this.finished) {
       // TODO: do something here to communicate that the lesson is finished
@@ -75,15 +77,6 @@ export class LessonComponent implements OnInit {
 
   makeLessonLink(offset = 0) {
     return `/lesson/${this.layoutType}/${this.lessonNumber + offset}`;
-  }
-
-  private getTextArea() {
-    // TODO: is there an angular way of getting the element?
-    const textArea = document.getElementById('lessonTextArea') as (HTMLTextAreaElement | null);
-    if (!textArea) {
-      throw new Error('Failed to get lessonTextArea HTML element');
-    }
-    return textArea;
   }
 
   // if the user does not press the space button, that's fine

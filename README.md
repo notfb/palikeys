@@ -5,6 +5,8 @@ For example layouts generated using [Carpalx](http://mkweb.bcgsc.ca/carpalx/).
 
 A custom [Pali](https://en.wikipedia.org/wiki/Pali) layout can be found in the layout directory (including an auto hot key file).
 
+The firebase functions are in the [palikeys-serverless](https://github.com/notfb/palikeys-serverless) repository.
+
 This project is primarily offered as a gift to the Buddhist Monastic Community
 ([Shangika](https://en.wikipedia.org/wiki/Sangha) [Dāna](https://en.wikipedia.org/wiki/Dāna#Buddhism)).
 You are welcome to use it under the BSD 3-clause License as you see fit.

@@ -23,4 +23,8 @@ export class ScoreService {
   get(id: string): Observable<Score> {
     return this.http.get(`${ScoreService.BASE_URL}/${id}`) as Observable<Score>;
   }
+
+  list(): Observable<Score[]> {
+    return this.http.get(ScoreService.BASE_URL) as Observable<Score[]>;
+  }
 }

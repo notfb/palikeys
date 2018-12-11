@@ -15,6 +15,8 @@ export class ScoreService {
   }
 
   update(id: string, score: number): Observable<Object> {
+    // TODO: make this work when offline (aka store and send later...)
+    // https://blog.formpl.us/how-to-handle-post-put-requests-in-offline-applications-using-service-workers-indexedb-and-da7d0798a9ab
     return this.http.patch(`${ScoreService.BASE_URL}/${id}`, {score});
   }
 

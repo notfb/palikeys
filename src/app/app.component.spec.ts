@@ -37,6 +37,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.test-title').textContent).toContain('Keyboard Layout Tutor');
+    expect(compiled.querySelector('.test-title').textContent).toContain('Keyboard Tutor - ALPHA');
   });
 });

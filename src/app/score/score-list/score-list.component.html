@@ -2,7 +2,7 @@
 
   <div class="pk-text-center">
     <h1>High Score</h1>
-    <div style="color: red;" *ngIf="errorMessage">{{errorMessage}}</div>
+    <div style="color: red;" *ngIf="errorMessage" class="pk-padding-bottom-s">Error: {{errorMessage}}</div>
   </div>
 
   <table mat-table [dataSource]="scores" class="mat-elevation-z8 pk-padding-bottom">

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {ScoreService} from '../score.service';
 import {Score} from '../_models/scroe.model';
 
@@ -12,11 +12,17 @@ export class ScoreListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'score'];
   errorMessage: string | undefined;
 
-  constructor(private scoreService: ScoreService) {
+  constructor(private scoreService: ScoreService,
+              private changeDetectorRefs: ChangeDetectorRef) {
   }
 
   ngOnInit() {
-    this.scoreService.list().subscribe(list => this.scores = list, error => this.errorMessage = error.message || error);
+    this.scoreService.list().subscribe(list => {
+      this.scores = list;
+      console.log('updated scores list', list);
+      // TODO: use obserable stream or data source to update table, instead of triggering the change detector
+      this.changeDetectorRefs.detectChanges();
+    }, error => this.errorMessage = 'Failed to load high score');
   }
 
 }

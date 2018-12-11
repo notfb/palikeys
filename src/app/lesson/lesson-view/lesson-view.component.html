@@ -1,5 +1,5 @@
 <div class="pk-padding">
-  <mat-card style="text-align: center">
+  <mat-card class="pk-text-center">
     <mat-card-title>
       <div>Lesson {{lessonNumber}}</div>
       <div style="font-size: 0.7em; color: grey">Score: {{realTimeScore}}</div>
@@ -21,7 +21,7 @@
         <mat-grid-tile style="text-align: left">
           <a *ngIf="lessonNumber > 1" routerLink="{{makeLessonLink(-1)}}">Previous</a>
         </mat-grid-tile>
-        <mat-grid-tile style="text-align: center">
+        <mat-grid-tile class="pk-text-center">
           <label for="keyboardLayoutSelect" class="pk-padding-right-xs">Layout:</label>
           <select id="keyboardLayoutSelect" [(ngModel)]="layoutType" (ngModelChange)="onKeyboardLayoutChange()">
             <option [value]="lo.value" *ngFor="let lo of layoutOptions">{{lo.name}}</option>

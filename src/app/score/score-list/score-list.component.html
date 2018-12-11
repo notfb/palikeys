@@ -1,3 +1,34 @@
-<p>
-  Comming soon...
-</p>
+<div class="pk-padding">
+
+  <div class="pk-text-center">
+    <h1>High Score</h1>
+    <div style="color: red;" *ngIf="errorMessage">{{errorMessage}}</div>
+  </div>
+
+  <table mat-table [dataSource]="scores" class="mat-elevation-z8 pk-padding-bottom">
+    <!-- Position Column -->
+    <!--<ng-container matColumnDef="position">-->
+    <!--<th mat-header-cell *matHeaderCellDef> No. </th>-->
+    <!--<td mat-cell *matCellDef="let element"> {{element.position}} </td>-->
+    <!--</ng-container>-->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.username}}</td>
+    </ng-container>
+
+    <!-- Score Column -->
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef> Score</th>
+      <td mat-cell *matCellDef="let element"> {{element.score}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div class="pk-padding-top pk-padding-bottom-s pk-text-center">
+    <a routerLink="/">Back to the lessons</a>
+  </div>
+</div>

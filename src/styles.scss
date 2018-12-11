@@ -44,6 +44,10 @@ body {
   padding-left: 20px;
 }
 
+.pk-padding-top {
+  padding-top: 20px;
+}
+
 .pk-padding-right-xs {
   padding-right: 5px;
 }
@@ -54,4 +58,8 @@ body {
 
 .pk-fill-remaining-space {
   flex: 1 1 auto;
+}
+
+.pk-text-center {
+  text-align: center;
 }

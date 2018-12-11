@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule, MatGridListModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatGridListModule, MatTableModule, MatToolbarModule} from '@angular/material';
 import {ScoreService} from './score/score.service';
 import {LessonComponent} from './lesson/lesson.component';
 import {LessonService} from './lesson/lesson.service';
@@ -25,13 +25,14 @@ import {ScoreListComponent} from './score/score-list/score-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule
   ],
   providers: [ScoreService, LessonService],
   bootstrap: [AppComponent]

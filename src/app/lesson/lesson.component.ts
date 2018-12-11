@@ -23,6 +23,9 @@ export class LessonComponent implements OnInit {
   layoutOptions: { name: string, value: KeyboardLayoutType }[] =
     [{name: 'QWERTY', value: 'qwerty'}, {name: 'Pali Meāt', value: 'paliMeat'}];
 
+  score = 0;
+  finished = false;
+
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private lessonService: LessonService) {
@@ -34,6 +37,8 @@ export class LessonComponent implements OnInit {
         this.lessonNumber = parseInt(params['lessonNumber'], 10);
         this.layoutType = params['layoutType'];
         this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
+        this.finished = false;
+        this.getTextArea().focus();
       }
     );
   }
@@ -49,16 +54,26 @@ export class LessonComponent implements OnInit {
 
   onKey({key}: { key: string }) {
     const textArea = this.getTextArea();
-    this.clearError();
 
-    if (this.matchesLessonWithSpace(key, this.cursorPos)) {
+    if (this.finished) {
+      // TODO: do something here to communicate that the lesson is finished
+    } else if (this.matchesLessonWithSpace(key, this.cursorPos)) {
       this.cursorPos++;
-      textArea.setSelectionRange(0, ++this.cursorPos);
+      this.correctKey(textArea, key);
     } else if (this.matchesLesson(key, this.cursorPos)) {
-      textArea.setSelectionRange(0, ++this.cursorPos);
+      this.correctKey(textArea, key);
     } else {
       this.resetAndDisplayError(textArea);
     }
+
+    if (!this.finished && this.cursorPos >= this.lesson.length) {
+      this.finished = true;
+      this.score += 100 * this.lessonNumber;
+    }
+  }
+
+  makeLessonLink(offset = 0) {
+    return `/lesson/${this.layoutType}/${this.lessonNumber + offset}`;
   }
 
   private getTextArea() {
@@ -70,7 +85,7 @@ export class LessonComponent implements OnInit {
     return textArea;
   }
 
-// if the user does not press the space button, that's fine
+  // if the user does not press the space button, that's fine
   private matchesLessonWithSpace(key: string, cursorPos: number) {
     return this.matchesLesson(' ', cursorPos) && this.matchesLesson(key, cursorPos + 1);
   }
@@ -87,8 +102,12 @@ export class LessonComponent implements OnInit {
     this.errorMessage = 'You missed a character, please start over!';
   }
 
-  private clearError() {
+  private correctKey(textArea: HTMLTextAreaElement, key: string) {
+    textArea.setSelectionRange(0, ++this.cursorPos);
     this.errorMessage = '';
+    if (key !== ' ') {
+      this.score++;
+    }
   }
 
 }

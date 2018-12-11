@@ -6,7 +6,7 @@
     </mat-card-title>
     <mat-card-content>
       <textarea title="Lesson" rows="10" cols="50" id="lessonTextArea" autofocus readonly
-                (keypress)="onKey($event)"
+                (keypress)="onKey($event)" (blur)="onTextAreaBlur()"
                 style="resize: none; font-size: 1.5em; font-family: 'Courier New'">{{lesson}}</textarea>
     </mat-card-content>
     <mat-card-footer>

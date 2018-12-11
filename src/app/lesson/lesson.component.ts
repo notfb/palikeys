@@ -5,7 +5,6 @@ import {Error} from 'tslint/lib/error';
 import {KeyboardLayoutType} from './_models/keyboard.model';
 
 
-// TODO: if tab is activated or layout is changed make sure text area has focus again
 @Component({
   selector: 'app-lesson',
   templateUrl: './lesson.component.html',
@@ -43,11 +42,13 @@ export class LessonComponent implements OnInit {
     this.router.navigate(['lesson', this.layoutType, this.lessonNumber]);
   }
 
+  // The text area needs to keep the focus to make sure key events are send to it.
+  onTextAreaBlur(): void {
+    this.getTextArea().focus();
+  }
+
   onKey({key}: { key: string }) {
-    const textArea = document.getElementById('lessonTextArea') as (HTMLTextAreaElement | null);
-    if (!textArea) {
-      throw new Error('Failed to get lessonTextArea HTML element');
-    }
+    const textArea = this.getTextArea();
     this.clearError();
 
     if (this.matchesLessonWithSpace(key, this.cursorPos)) {
@@ -60,7 +61,16 @@ export class LessonComponent implements OnInit {
     }
   }
 
-  // if the user does not press the space button, that's fine
+  private getTextArea() {
+    // TODO: is there an angular way of getting the element?
+    const textArea = document.getElementById('lessonTextArea') as (HTMLTextAreaElement | null);
+    if (!textArea) {
+      throw new Error('Failed to get lessonTextArea HTML element');
+    }
+    return textArea;
+  }
+
+// if the user does not press the space button, that's fine
   private matchesLessonWithSpace(key: string, cursorPos: number) {
     return this.matchesLesson(' ', cursorPos) && this.matchesLesson(key, cursorPos + 1);
   }

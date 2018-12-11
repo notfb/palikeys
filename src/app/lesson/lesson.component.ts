@@ -20,6 +20,9 @@ export class LessonComponent implements OnInit {
 
   onScoreChanged(score: number) {
     // TODO: update by username / id
-    this.scoreService.update('d3zDQ8jIeqKKNxICAW3I', score);
+    this.scoreService.update('d3zDQ8jIeqKKNxICAW3I', score).subscribe(() => {
+    }, (error: any) => {
+      console.error(error);
+    });
   }
 }

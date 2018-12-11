@@ -18,8 +18,8 @@ export class ScoreListComponent implements OnInit {
 
   ngOnInit() {
     this.scoreService.list().subscribe(list => {
+      // TODO: sort list by score and display position column
       this.scores = list;
-      console.log('updated scores list', list);
       // TODO: use obserable stream or data source to update table, instead of triggering the change detector
       this.changeDetectorRefs.detectChanges();
     }, error => this.errorMessage = 'Failed to load high score');

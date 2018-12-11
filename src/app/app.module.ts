@@ -10,6 +10,7 @@ import {MatCardModule, MatGridListModule, MatToolbarModule} from '@angular/mater
 import {ScoreService} from './score/score.service';
 import {LessonComponent} from './lesson/lesson.component';
 import {LessonService} from './lesson/lesson.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {LessonService} from './lesson/lesson.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
     MatToolbarModule,

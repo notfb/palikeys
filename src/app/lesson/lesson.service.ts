@@ -1,29 +1,36 @@
 import {Injectable} from '@angular/core';
 import {Error} from 'tslint/lib/error';
+import {KeyboardLayoutType} from './_models/keyboard.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LessonService {
 
-  // TODO: make configureable
-  readonly qwertyLayout = {
+  readonly qwerty = {
     numberRow: '§1234567890-='.split(''),
     topRow: 'qwertyuiop[]'.split(''),
     homeRow: 'asdfghjkl;\'\\'.split(''),
     lowerRow: '`zxcvbnm,./'.split('')
   };
 
-  readonly meatLayout = {
+  readonly paliMeat = {
     numberRow: '§1234567890-='.split(''),
     topRow: 'ūbokpvmurl[]'.split(''),
     homeRow: 'meātsnhai;\'\\'.split(''),
     lowerRow: '`ḍgcdjñy,./'.split('')
   };
 
+  readonly layouts = {qwerty: this.qwerty, paliMeat: this.paliMeat};
+
+
   // TODO: do special characters in later lessons?
-  make(lessonNumber: number, length: number = 10 * 50) {
-    const layout = this.meatLayout;
+  make(lessonNumber: number, layoutType: KeyboardLayoutType = 'qwerty', length: number = 10 * 50) {
+    const layout = this.layouts[layoutType];
+    if (!layout) {
+      throw new Error(`Invalid keyboard layout type ${layoutType}`);
+    }
+
     let chars: string[] = [];
     switch (lessonNumber) {
       case 1:

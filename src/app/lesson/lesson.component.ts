@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {LessonService} from './lesson.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Error} from 'tslint/lib/error';
 import {KeyboardLayoutType} from './_models/keyboard.model';
 
 
-// TODO: if tab is activated make sure text area has focus again
+// TODO: if tab is activated or layout is changed make sure text area has focus again
 @Component({
   selector: 'app-lesson',
   templateUrl: './lesson.component.html',
@@ -18,10 +18,14 @@ export class LessonComponent implements OnInit {
   lessonNumber = 1;
   lesson = '';
   cursorPos = 0;
-  layout: KeyboardLayoutType = 'qwerty';
   errorMessage = '';
 
+  layoutType: KeyboardLayoutType = 'qwerty';
+  layoutOptions: { name: string, value: KeyboardLayoutType }[] =
+    [{name: 'QWERTY', value: 'qwerty'}, {name: 'Pali Meāt', value: 'paliMeat'}];
+
   constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
               private lessonService: LessonService) {
   }
 
@@ -29,9 +33,14 @@ export class LessonComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       (params: Params) => {
         this.lessonNumber = parseInt(params['lessonNumber'], 10);
-        this.lesson = this.lessonService.make(this.lessonNumber);
+        this.layoutType = params['layoutType'];
+        this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
       }
     );
+  }
+
+  onKeyboardLayoutChange() {
+    this.router.navigate(['lesson', this.layoutType, this.lessonNumber]);
   }
 
   onKey({key}: { key: string }) {

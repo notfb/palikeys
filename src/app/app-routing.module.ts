@@ -4,8 +4,8 @@ import {LessonComponent} from './lesson/lesson.component';
 
 // TODO: validate lessonNumber with matcher
 const routes: Routes = [
-  {path: '', redirectTo: 'lesson/1', pathMatch: 'full'},
-  {path: 'lesson/:lessonNumber', component: LessonComponent},
+  {path: '', redirectTo: 'lesson/qwerty/1', pathMatch: 'full'},
+  {path: 'lesson/:layoutType/:lessonNumber', component: LessonComponent},
 ];
 
 @NgModule({

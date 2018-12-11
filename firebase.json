@@ -6,6 +6,28 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "headers": [
+      {
+        // cache images for 2h
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7200"
+          }
+        ]
+      },
+      {
+        // cache css / js for 2000h, since we have unique ids
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7200000"
+          }
+        ]
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

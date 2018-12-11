@@ -13,6 +13,9 @@ If you need this code licensed under an other open source license let me know.
 
 See LICENSE.txt for legal information.
 
+This is an [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product), it barely works.
+The focus is on creating customer value, not having great test coverage, architecture etc.
+
 This Project was made possible by [Leanovate](https://www.leanovate.de/).
 They actually let me to do it on company time, which is very awesome!
 

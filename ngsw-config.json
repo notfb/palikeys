@@ -23,5 +23,20 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "scoreApi",
+      "urls": [
+        "https://palikeys-serverless.firebaseapp.com/api/score",
+        "https://palikeys-serverless.firebaseapp.com/api/score/*"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "30d",
+        "timeout": "120s"
+      }
+    }
   ]
 }

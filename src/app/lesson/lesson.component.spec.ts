@@ -2,7 +2,9 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {LessonComponent} from './lesson.component';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {RouterTestingModule} from '@angular/router/testing';
+import {ScoreService} from '../score/score.service';
+import {ScoreServiceMock} from '../score/score.service.mock';
+
 
 describe('LessonComponent', () => {
   let component: LessonComponent;
@@ -10,8 +12,8 @@ describe('LessonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
       declarations: [LessonComponent],
+      providers: [{provide: ScoreService, useClass: ScoreServiceMock}],
       schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();

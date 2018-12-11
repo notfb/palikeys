@@ -1,0 +1,36 @@
+<div class="pk-padding">
+  <mat-card style="text-align: center">
+    <mat-card-title>
+      <div>Lesson {{lessonNumber}}</div>
+      <div style="font-size: 0.7em; color: grey">Score: {{realTimeScore}}</div>
+      <div style="color: green;" *ngIf="finished">
+        Well done - Lesson completed!
+        <a routerLink="{{makeLessonLink(0)}}">Restart</a>
+        &nbsp;
+        <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">Next</a>
+      </div>
+      <div style="color: red;" *ngIf="errorMessage">{{errorMessage}}</div>
+    </mat-card-title>
+    <mat-card-content>
+      <textarea #textArea id="lessonTextArea" title="Lesson" rows="10" cols="50" autofocus readonly
+                (keypress)="onKey($event)" (blur)="onTextAreaBlur()"
+                style="resize: none; font-size: 1.5em; font-family: 'Courier New'">{{lesson}}</textarea>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-grid-list cols="3" rowHeight="20px" class="pk-padding-bottom-s">
+        <mat-grid-tile style="text-align: left">
+          <a *ngIf="lessonNumber > 1" routerLink="{{makeLessonLink(-1)}}">Previous</a>
+        </mat-grid-tile>
+        <mat-grid-tile style="text-align: center">
+          <label for="keyboardLayoutSelect" class="pk-padding-right-xs">Layout:</label>
+          <select id="keyboardLayoutSelect" [(ngModel)]="layoutType" (ngModelChange)="onKeyboardLayoutChange()">
+            <option [value]="lo.value" *ngFor="let lo of layoutOptions">{{lo.name}}</option>
+          </select>
+        </mat-grid-tile>
+        <mat-grid-tile style="text-align: right">
+          <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">Next</a>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-footer>
+  </mat-card>
+</div>

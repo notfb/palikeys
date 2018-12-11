@@ -11,16 +11,20 @@ import {ScoreService} from './score/score.service';
 import {LessonComponent} from './lesson/lesson.component';
 import {LessonService} from './lesson/lesson.service';
 import {FormsModule} from '@angular/forms';
+import {LessonViewComponent} from './lesson/lesson-view/lesson-view.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LessonComponent
+    LessonComponent,
+    LessonViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
     MatToolbarModule,

@@ -1,0 +1,33 @@
+{
+  "name": "functions",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "author": "Leanovate GmBH",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.1.0",
+    "firebase-functions-helper": "^0.6.0",
+    "uuid": "^3.3.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/uuid": "^3.4.4",
+    "tslint": "~5.8.0",
+    "typescript": "~2.8.3",
+    "firebase": "~5.7.0"
+  },
+  "private": true
+}

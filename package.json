@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --source-map",
-    "build": "ng build --prod --aot --build-optimizer",
+    "build": "ng build --prod --aot --build-optimizer --base-href=/palikeys/",
     "test": "ng test",
     "coverageNoWatch": "ng test --code-coverage --watch=false",
     "lint": "ng lint",

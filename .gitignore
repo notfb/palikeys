@@ -6,6 +6,8 @@ dist
 out-tsc
 spec/reports
 e2e/spec/reports
-.firebase
 coverage
 .nyc_output
+
+.firebase
+firebase-debug.log

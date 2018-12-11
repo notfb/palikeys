@@ -14,6 +14,8 @@ import {KeyboardLayoutType} from '../_models/keyboard.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Score} from '../../score/_models/scroe.model';
 
+// TODO: display two scores (total and current lesson)
+// TODO: send current lesson score as increment to server when completed / failed [failed score = max(current lesson score - 50, 0)]
 @Component({
   selector: 'app-lesson-view',
   templateUrl: './lesson-view.component.html',
@@ -60,7 +62,6 @@ export class LessonViewComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.score) {
-      // TODO: maybe realTimeScore should just be the score of the current lesson and then add the score from network...
       this.realTimeScore = this.score.score;
     }
   }
@@ -79,7 +80,7 @@ export class LessonViewComponent implements OnInit, OnChanges {
     const textArea = this.textarea.nativeElement;
 
     if (this.finished) {
-      // TODO: do something here to communicate that the lesson is finished
+      // TODO: do something here to communicate that the lesson is finished (shake animation for the textArea?)
     } else if (this.matchesLessonWithSpace(key, this.cursorPos)) {
       this.cursorPos++;
       this.correctKey(textArea, key);

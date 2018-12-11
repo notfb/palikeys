@@ -1,4 +1,14 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {LessonService} from '../lesson.service';
 import {KeyboardLayoutType} from '../_models/keyboard.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
@@ -9,7 +19,7 @@ import {Score} from '../../score/_models/scroe.model';
   templateUrl: './lesson-view.component.html',
   styleUrls: ['./lesson-view.component.scss']
 })
-export class LessonViewComponent implements OnInit {
+export class LessonViewComponent implements OnInit, OnChanges {
 
   @Input() score: Score;
   @Output() scoreChanged = new EventEmitter<number>();
@@ -46,6 +56,13 @@ export class LessonViewComponent implements OnInit {
         this.textarea.nativeElement.focus();
       }
     );
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.score) {
+      // TODO: maybe realTimeScore should just be the score of the current lesson and then add the score from network...
+      this.realTimeScore = this.score.score;
+    }
   }
 
   onKeyboardLayoutChange() {

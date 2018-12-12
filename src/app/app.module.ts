@@ -14,13 +14,15 @@ import {FormsModule} from '@angular/forms';
 import {LessonViewComponent} from './lesson/lesson-view/lesson-view.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ScoreListComponent} from './score/score-list/score-list.component';
+import {InfoComponent} from './info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LessonComponent,
     LessonViewComponent,
-    ScoreListComponent
+    ScoreListComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

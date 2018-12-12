@@ -16,6 +16,7 @@ export class LessonService {
     homeRowWords: ['as', 'fad', 'gag', 'gal', 'lag', 'lad', 'dad', 'saga', 'hash', 'shall', 'slash', 'salad', 'alaska', 'salads']
   };
 
+  // TODO: add more words and more word lessons (based on word length maybe?)
   private readonly paliMeat = {
     numberRow: '§1234567890-='.split(''),
     topRow: 'ūbokpvmurl[]'.split(''),

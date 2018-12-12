@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Error} from 'tslint/lib/error';
 import {KeyboardLayoutType} from './_models/keyboard.model';
 
 @Injectable({

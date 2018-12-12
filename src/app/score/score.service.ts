@@ -22,6 +22,10 @@ export class ScoreService {
     return this.http.patch(`${ScoreService.BASE_URL}/${id}`, {score});
   }
 
+  increment(id: string, score: number): Observable<Object> {
+    return this.http.put(`${ScoreService.BASE_URL}/${id}/increment`, {score});
+  }
+
   get(id: string): Observable<Score> {
     return this.http.get(`${ScoreService.BASE_URL}/${id}`) as Observable<Score>;
   }

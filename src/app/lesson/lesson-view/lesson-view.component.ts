@@ -1,44 +1,33 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-  ViewChild
-} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {LessonService} from '../lesson.service';
 import {KeyboardLayoutType} from '../_models/keyboard.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Score} from '../../score/_models/scroe.model';
 
-// TODO: display two scores (total and current lesson)
-// TODO: send current lesson score as increment to server when completed / failed [failed score = max(current lesson score - 50, 0)]
 @Component({
   selector: 'app-lesson-view',
   templateUrl: './lesson-view.component.html',
   styleUrls: ['./lesson-view.component.scss']
 })
-export class LessonViewComponent implements OnInit, OnChanges {
+export class LessonViewComponent implements OnInit {
 
   @Input() score: Score;
-  @Output() scoreChanged = new EventEmitter<number>();
+  @Output() scoreIncrement = new EventEmitter<number>();
 
   readonly MAX_LESSON = 20;
 
   lessonNumber = 1;
   lesson = '';
   cursorPos = 0;
+
   errorMessage = '';
+  finishedMessage = '';
+  lessonScore = 0;
 
   layoutType: KeyboardLayoutType = 'qwerty';
   layoutOptions: { name: string, value: KeyboardLayoutType }[] =
     [{name: 'QWERTY', value: 'qwerty'}, {name: 'Pali Meāt', value: 'paliMeat'}];
 
-  realTimeScore = 0;
-  finished = false;
 
   @ViewChild('textArea') private textarea: ElementRef<HTMLTextAreaElement>;
 
@@ -53,17 +42,13 @@ export class LessonViewComponent implements OnInit, OnChanges {
         this.lessonNumber = parseInt(params['lessonNumber'], 10);
         this.layoutType = params['layoutType'];
         this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
-        this.finished = false;
+        this.finishedMessage = '';
+        this.errorMessage = '';
+        this.lessonScore = 0;
         this.cursorPos = 0;
         this.textarea.nativeElement.focus();
       }
     );
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.score) {
-      this.realTimeScore = this.score.score;
-    }
   }
 
   onKeyboardLayoutChange() {
@@ -79,7 +64,7 @@ export class LessonViewComponent implements OnInit, OnChanges {
   onKey({key}: { key: string }) {
     const textArea = this.textarea.nativeElement;
 
-    if (this.finished) {
+    if (this.finishedMessage) {
       // TODO: do something here to communicate that the lesson is finished (shake animation for the textArea?)
     } else if (this.matchesLessonWithSpace(key, this.cursorPos)) {
       this.cursorPos++;
@@ -90,10 +75,11 @@ export class LessonViewComponent implements OnInit, OnChanges {
       this.resetAndDisplayError(textArea);
     }
 
-    if (!this.finished && this.cursorPos >= this.lesson.length) {
-      this.finished = true;
-      this.realTimeScore += 100 * this.lessonNumber;
-      this.scoreChanged.emit(this.realTimeScore);
+    if (!this.finishedMessage && this.cursorPos >= this.lesson.length) {
+      this.lessonScore += 100 * this.lessonNumber;
+      this.finishedMessage = `Lesson completed! High score +${this.lessonScore} 🙌`;
+      this.scoreIncrement.emit(this.lessonScore);
+      this.lessonScore = 0;
     }
   }
 
@@ -116,15 +102,19 @@ export class LessonViewComponent implements OnInit, OnChanges {
     textArea.setSelectionRange(0, 0);
     this.cursorPos = 0;
     this.errorMessage = 'You missed a character, please start over!';
-    this.realTimeScore = this.realTimeScore > 10 ? this.realTimeScore - 10 : 0;
-    this.scoreChanged.emit(this.realTimeScore);
+    this.lessonScore = this.lessonScore > 20 ? this.lessonScore - 20 : 0;
+    if (this.lessonScore > 0) {
+      this.scoreIncrement.emit(this.lessonScore);
+      this.errorMessage += ` High score +${this.lessonScore}`;
+    }
+    this.lessonScore = 0;
   }
 
   private correctKey(textArea: HTMLTextAreaElement, key: string) {
     textArea.setSelectionRange(0, ++this.cursorPos);
     this.errorMessage = '';
     if (key !== ' ') {
-      this.realTimeScore++;
+      this.lessonScore++;
     }
   }
 

@@ -2,11 +2,13 @@
   <mat-card class="pk-text-center">
     <mat-card-title>
       <div>Lesson {{lessonNumber}}</div>
-      <div style="font-size: 0.7em; color: grey">Score: {{realTimeScore}}</div>
-      <div style="color: green;" *ngIf="finished">
-        Well done - Lesson completed!
-        <a routerLink="{{makeLessonLink(0)}}">Restart</a>
-        &nbsp;
+      <div style="font-size: 0.7em; color: grey">
+        <span>Lesson Score: {{lessonScore}}</span>
+        <span *ngIf="score" class="pk-padding-left">High Score: {{score.score}}</span>
+      </div>
+      <div style="color: green;" *ngIf="finishedMessage">
+        {{finishedMessage}}
+        <a routerLink="{{makeLessonLink(0)}}">Restart</a>&nbsp;
         <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">Next</a>
       </div>
       <div style="color: red;" *ngIf="errorMessage">{{errorMessage}}</div>

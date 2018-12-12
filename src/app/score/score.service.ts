@@ -3,8 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Score} from './_models/scroe.model';
 
-// TODO: instead of using update to set a new score, send the score from current lesson as an increment and ...
-// TODO: make updates / increments work offline (aka store and send later...)
+// TODO: make increments work offline (aka store and send later...)
 // https://blog.formpl.us/how-to-handle-post-put-requests-in-offline-applications-using-service-workers-indexedb-and-da7d0798a9ab
 
 // TODO: introduce generic REST service for mocking in tests etc.

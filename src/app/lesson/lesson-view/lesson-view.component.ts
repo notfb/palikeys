@@ -14,7 +14,7 @@ export class LessonViewComponent implements OnInit {
   @Input() score: Score;
   @Output() scoreIncrement = new EventEmitter<number>();
 
-  readonly MAX_LESSON = 20;
+  readonly MAX_LESSON = LessonService.MAX_LESSON;
 
   lessonNumber = 1;
   lesson = '';

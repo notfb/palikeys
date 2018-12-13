@@ -46,3 +46,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## ToDo / Opportunities for Contribution
+
+- Write unit tests
+- enforce test coverage of at least 80%
+- Write e2e tests
+- Setup Continuous Integration Server
+
+- Remove the dirty LessonService.keepFocus hack
+- The way the lesson.component handles score creation is a bit messy
+
+- Support offline updates and creation of scores (cache and sent later)
+
+There are more TODOs and FIXMEs in the code.

@@ -27,11 +27,11 @@
                 style="resize: none; font-size: 1.5em; font-family: 'Courier New'">{{lesson}}</textarea>
     </mat-card-content>
     <mat-card-footer>
-      <mat-grid-list cols="3" rowHeight="20px" class="pk-padding-bottom-s">
+      <mat-grid-list cols="3" rowHeight="40px" class="pk-padding-bottom-s">
         <mat-grid-tile style="text-align: left">
-          <a *ngIf="lessonNumber > 1" routerLink="{{makeLessonLink(-1)}}">
+          <button mat-icon-button mat-stroked-button *ngIf="lessonNumber > 1" routerLink="{{makeLessonLink(-1)}}">
             <mat-icon aria-label="Previous">arrow_back</mat-icon>
-          </a>
+          </button>
         </mat-grid-tile>
         <mat-grid-tile class="pk-text-center">
           <label for="keyboardLayoutSelect" class="pk-padding-right-xs">
@@ -42,9 +42,10 @@
           </select>
         </mat-grid-tile>
         <mat-grid-tile style="text-align: right">
-          <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">
+          <button mat-icon-button mat-stroked-button *ngIf="lessonNumber < MAX_LESSON"
+                  routerLink="{{makeLessonLink(1)}}">
             <mat-icon aria-label="Previous">arrow_forward</mat-icon>
-          </a>
+          </button>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-card-footer>

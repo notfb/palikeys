@@ -6,7 +6,17 @@ import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule, MatGridListModule, MatIconModule, MatTableModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
 import {ScoreService} from './score/score.service';
 import {LessonComponent} from './lesson/lesson.component';
 import {LessonService} from './lesson/lesson.service';
@@ -15,6 +25,7 @@ import {LessonViewComponent} from './lesson/lesson-view/lesson-view.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ScoreListComponent} from './score/score-list/score-list.component';
 import {InfoComponent} from './info/info.component';
+import {UserDialogComponent} from './user/user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +34,7 @@ import {InfoComponent} from './info/info.component';
     LessonViewComponent,
     ScoreListComponent,
     InfoComponent,
+    UserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +47,14 @@ import {InfoComponent} from './info/info.component';
     MatIconModule,
     MatCardModule,
     MatGridListModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+  ],
+  entryComponents: [
+    UserDialogComponent,
   ],
   providers: [ScoreService, LessonService],
   bootstrap: [AppComponent]

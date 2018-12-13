@@ -4,7 +4,9 @@
       <div>Lesson {{lessonNumber}}</div>
       <div style="font-size: 0.7em; color: grey">
         <span>Lesson Score: {{lessonScore}}</span>
-        <span *ngIf="score" class="pk-padding-left">High Score: {{score.score}}</span>
+        <span *ngIf="score" class="pk-padding-left" style="vertical-align: middle; display: inline">
+          <mat-icon>bar_chart</mat-icon>High Score: {{score.score}}
+        </span>
       </div>
       <div style="color: green;" *ngIf="finishedMessage">
         {{finishedMessage}}
@@ -27,16 +29,22 @@
     <mat-card-footer>
       <mat-grid-list cols="3" rowHeight="20px" class="pk-padding-bottom-s">
         <mat-grid-tile style="text-align: left">
-          <a *ngIf="lessonNumber > 1" routerLink="{{makeLessonLink(-1)}}">Previous</a>
+          <a *ngIf="lessonNumber > 1" routerLink="{{makeLessonLink(-1)}}">
+            <mat-icon aria-label="Previous">arrow_back</mat-icon>
+          </a>
         </mat-grid-tile>
         <mat-grid-tile class="pk-text-center">
-          <label for="keyboardLayoutSelect" class="pk-padding-right-xs">Layout:</label>
+          <label for="keyboardLayoutSelect" class="pk-padding-right-xs">
+            <mat-icon aria-label="Previous">keyboard</mat-icon>
+          </label>
           <select id="keyboardLayoutSelect" [(ngModel)]="layoutType" (ngModelChange)="onKeyboardLayoutChange()">
             <option [value]="lo.value" *ngFor="let lo of layoutOptions">{{lo.name}}</option>
           </select>
         </mat-grid-tile>
         <mat-grid-tile style="text-align: right">
-          <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">Next</a>
+          <a *ngIf="lessonNumber < MAX_LESSON" routerLink="{{makeLessonLink(1)}}">
+            <mat-icon aria-label="Previous">arrow_forward</mat-icon>
+          </a>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-card-footer>

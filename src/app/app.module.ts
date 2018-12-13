@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule, MatGridListModule, MatTableModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatGridListModule, MatIconModule, MatTableModule, MatToolbarModule} from '@angular/material';
 import {ScoreService} from './score/score.service';
 import {LessonComponent} from './lesson/lesson.component';
 import {LessonService} from './lesson/lesson.service';
@@ -32,6 +32,7 @@ import {InfoComponent} from './info/info.component';
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatIconModule,
     MatCardModule,
     MatGridListModule,
     MatTableModule

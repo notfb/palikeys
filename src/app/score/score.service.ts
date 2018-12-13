@@ -25,7 +25,13 @@ export class ScoreService {
     return this.http.get(`${ScoreService.BASE_URL}/${id}`) as Observable<Score>;
   }
 
+  getByName(username: string): Observable<Score> {
+    return this.http.get(`${ScoreService.BASE_URL}/username/${username}`) as Observable<Score>;
+  }
+
   list(): Observable<Score[]> {
     return this.http.get(ScoreService.BASE_URL) as Observable<Score[]>;
   }
+
+
 }

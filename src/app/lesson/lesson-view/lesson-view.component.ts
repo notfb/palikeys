@@ -108,7 +108,7 @@ export class LessonViewComponent implements OnInit {
 
   // we are strict about making errors -> generate new lesson and restart
   private resetAndDisplayError(textArea: HTMLTextAreaElement) {
-    this.lesson = this.lessonService.make(this.lessonNumber);
+    this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
     textArea.setSelectionRange(0, 0);
     this.cursorPos = 0;
     this.errorMessage = 'You missed a character, please start over!';

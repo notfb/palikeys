@@ -17,12 +17,10 @@ export class LessonComponent implements OnInit {
   }
 
   ngOnInit() {
-    // TODO: get by username
-    this.scoreService.get('c382fe33-2ec1-48a9-b52e-ee084ed9f193').subscribe((score: Score) => this.score = score);
+    this.scoreService.get(this.userService.username).subscribe((score: Score) => this.score = score);
     this.userService.updates().pipe(
       switchMap(username => this.scoreService.getByName(username)))
       .subscribe(score => this.score = score);
-    this.userService.updates().subscribe(username => console.log('LessonComponent new user name', username));
   }
 
   onScoreIncrement(score: number) {

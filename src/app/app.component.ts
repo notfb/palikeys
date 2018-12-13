@@ -12,7 +12,7 @@ import {UserService} from './user/user.service';
 export class AppComponent {
   updateAvailable = false;
 
-  constructor(private updates: SwUpdate, private dialog: MatDialog, private userSerivce: UserService) {
+  constructor(private updates: SwUpdate, private dialog: MatDialog, private userService: UserService) {
     updates.available.subscribe(() => {
       this.updateAvailable = true;
     });
@@ -21,12 +21,12 @@ export class AppComponent {
   openUserDialog() {
     const dialogRef = this.dialog.open(UserDialogComponent, {
       width: '250px',
-      data: {username: this.userSerivce.username}
+      data: {username: this.userService.username}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userSerivce.username = result;
+        this.userService.username = result;
       }
     });
   }

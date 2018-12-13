@@ -15,6 +15,7 @@ export class LessonViewComponent implements OnInit {
   @Output() scoreIncrement = new EventEmitter<number>();
 
   readonly MAX_LESSON = LessonService.MAX_LESSON;
+  readonly LONG_LESSON_NUMBER = LessonService.LONG_LESSON_NUMBER;
 
   lessonNumber = 1;
   lesson = '';
@@ -61,8 +62,16 @@ export class LessonViewComponent implements OnInit {
 
   }
 
-  onKey({key}: { key: string }) {
+  onKey(event: { key: string }) {
     const textArea = this.textarea.nativeElement;
+    let key = event.key;
+
+    // ignore windows \r ...
+    if (key === '\r') {
+      return;
+    } else if (key.toLowerCase() === 'enter') {
+      key = '\n';
+    }
 
     if (this.finishedMessage) {
       // TODO: do something here to communicate that the lesson is finished (shake animation for the textArea?)
@@ -87,9 +96,10 @@ export class LessonViewComponent implements OnInit {
     return `/lesson/${this.layoutType}/${this.lessonNumber + offset}`;
   }
 
-  // if the user does not press the space button, that's fine
+  // if the user does not press the space / return button, that's fine
   private matchesLessonWithSpace(key: string, cursorPos: number) {
-    return this.matchesLesson(' ', cursorPos) && this.matchesLesson(key, cursorPos + 1);
+    return this.matchesLesson(' ', cursorPos) &&
+      this.matchesLesson(key, cursorPos + 1);
   }
 
   private matchesLesson(key: string, cursorPos: number) {

@@ -14,8 +14,14 @@
       <div style="color: red;" *ngIf="errorMessage">{{errorMessage}}</div>
     </mat-card-title>
     <mat-card-content>
-      <textarea #textArea id="lessonTextArea" title="Lesson" rows="10" cols="50" autofocus readonly
-                (keypress)="onKey($event)" (blur)="onTextAreaBlur()"
+      <textarea #textArea id="lessonTextArea"
+                title="Lesson"
+                rows="{{lessonNumber >= LONG_LESSON_NUMBER ? 25 : 10}}"
+                cols="{{lessonNumber >= LONG_LESSON_NUMBER ? 100 : 50}}"
+                autofocus
+                readonly
+                (keypress)="onKey($event)"
+                (blur)="onTextAreaBlur()"
                 style="resize: none; font-size: 1.5em; font-family: 'Courier New'">{{lesson}}</textarea>
     </mat-card-content>
     <mat-card-footer>

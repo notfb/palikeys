@@ -1,12 +1,14 @@
 import {Injectable} from '@angular/core';
 import {KeyboardLayoutType} from './_models/keyboard.model';
+import {englishLong, paliLong} from './longTexts';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LessonService {
 
-  static readonly MAX_LESSON = 22;
+  static readonly MAX_LESSON = 25;
+  static readonly LONG_LESSON_NUMBER = 23;
 
   private readonly qwerty = {
     numberRow: '§1234567890-='.split(''),
@@ -14,7 +16,8 @@ export class LessonService {
     homeRow: 'asdfghjkl;\'\\'.split(''),
     bottomRow: '`zxcvbnm,./'.split(''),
     homeRowWords: ['add', 'alaska', 'as', 'ask', 'dad', 'fad', 'flagfalls', 'gag', 'gal', 'galagala', 'galahads', 'hadassahs',
-      'haggadahs', 'hash', 'haskalah', 'lad', 'lag', 'saga', 'salad', 'salads', 'shakalshas', 'shall', 'slash']
+      'haggadahs', 'hash', 'haskalah', 'lad', 'lag', 'saga', 'salad', 'salads', 'shakalshas', 'shall', 'slash'],
+    texts: englishLong
   };
 
   private readonly paliMeat = {
@@ -42,7 +45,8 @@ export class LessonService {
       'tini', 'tinta', 'tissa', 'tithi', 'titta', 'tittha', 'tiṃsa', 'tiṃsati', 'tā', 'tāhaṃ', 'tāni', 'tāsa', 'tāsaṃ', 'tāseti',
       'tāsita', 'tāta', 'āna', 'ānana', 'ānana', 'ānata', 'āneti', 'āsa', 'āsana', 'āsanna', 'āsannaṃ', 'āsanā', 'āsasāna', 'āsati',
       'āsatta', 'āsatta', 'āsatti', 'āsaṃ', 'āsaṃsa', 'āsaṃsati', 'āsaṃsā', 'āsbnn', 'āsi', 'āsimhā', 'āsisanā', 'āsisitattaṃ', 'āsita',
-      'āsitta', 'āsittha', 'āsiṃ', 'āsiṃsanā', 'āsiṃsati', 'āsiṃsitattaṃ', 'āsā', 'ātata', 'ātatta']
+      'āsitta', 'āsittha', 'āsiṃ', 'āsiṃsanā', 'āsiṃsati', 'āsiṃsitattaṃ', 'āsā', 'ātata', 'ātatta'],
+    texts: paliLong
   };
 
   private readonly layouts = {qwerty: this.qwerty, paliMeat: this.paliMeat};
@@ -128,6 +132,12 @@ export class LessonService {
       case 22:
         chars = [...layout.homeRow, ...layout.topRow, ...layout.bottomRow, ...layout.numberRow];
         break;
+      case 23:
+        return layout.texts[0];
+      case 24:
+        return layout.texts[1];
+      case 25:
+        return layout.texts[2];
 
       default:
         throw new Error(`Invalid lesson number: ${lessonNumber}`);

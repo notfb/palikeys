@@ -15,12 +15,12 @@ export class LessonComponent implements OnInit {
 
   ngOnInit() {
     // TODO: get by username
-    this.scoreService.get('d3zDQ8jIeqKKNxICAW3I').subscribe((score: Score) => this.score = score);
+    this.scoreService.get('c382fe33-2ec1-48a9-b52e-ee084ed9f193').subscribe((score: Score) => this.score = score);
   }
 
   onScoreIncrement(score: number) {
-    // TODO: update by username / id
-    this.scoreService.increment('d3zDQ8jIeqKKNxICAW3I', score).subscribe(() => {
+    // FIXME: handle case where we failed to fetch the score data from the server
+    this.scoreService.increment(this.score.id, score).subscribe(() => {
       this.score.score += score;
     }, () => {
       // TODO: store score update and send it when online / later

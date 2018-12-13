@@ -49,6 +49,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## ToDo / Opportunities for Contribution
 
+- Display an image of the keyboard layout below the text
+- Support mapping from QWERTY / QWERTZ Layout to Pali Layout via the webapp (just map the keys via typescript, instead of having the user install a custom keymap)
+
 - Write unit tests
 - enforce test coverage of at least 80%
 - Write e2e tests
@@ -58,6 +61,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - The way the lesson.component handles score creation is a bit messy
 
 - Support offline updates and creation of scores (cache and sent later)
-- Write a little user guide
 
 There are more TODOs and FIXMEs in the code.

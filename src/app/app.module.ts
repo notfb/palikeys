@@ -22,7 +22,7 @@ import {InfoComponent} from './info/info.component';
     LessonComponent,
     LessonViewComponent,
     ScoreListComponent,
-    InfoComponent
+    InfoComponent,
   ],
   imports: [
     BrowserModule,

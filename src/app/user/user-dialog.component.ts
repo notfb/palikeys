@@ -16,7 +16,7 @@ export class UserDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: UserDialogData) {
   }
 
-  onNoClick(): void {
+  onCancelClick(): void {
     this.dialogRef.close();
   }
 

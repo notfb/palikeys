@@ -1,11 +1,10 @@
 <h1 mat-dialog-title>Pick a username</h1>
 <div mat-dialog-content>
-  <p>username</p>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.username">
+    <input title="username" matInput [(ngModel)]="data.username" autofocus>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.username" cdkFocusInitial>Ok</button>
 </div>

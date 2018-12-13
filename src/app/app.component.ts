@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {SwUpdate} from '@angular/service-worker';
 import {MatDialog} from '@angular/material';
 import {UserDialogComponent} from './user/user-dialog.component';
+import {UserService} from './user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,8 @@ import {UserDialogComponent} from './user/user-dialog.component';
 })
 export class AppComponent {
   updateAvailable = false;
-  username: string;
 
-  constructor(private updates: SwUpdate, public dialog: MatDialog) {
+  constructor(private updates: SwUpdate, private dialog: MatDialog, private userSerivce: UserService) {
     updates.available.subscribe(() => {
       this.updateAvailable = true;
     });
@@ -21,12 +21,13 @@ export class AppComponent {
   openUserDialog() {
     const dialogRef = this.dialog.open(UserDialogComponent, {
       width: '250px',
-      data: {username: this.username}
+      data: {username: this.userSerivce.username}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.username = result;
+      if (result) {
+        this.userSerivce.username = result;
+      }
     });
   }
 

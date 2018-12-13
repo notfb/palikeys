@@ -6,25 +6,43 @@ import {KeyboardLayoutType} from './_models/keyboard.model';
 })
 export class LessonService {
 
-  static readonly MAX_LESSON = 21;
+  static readonly MAX_LESSON = 22;
 
   private readonly qwerty = {
     numberRow: '§1234567890-='.split(''),
     topRow: 'qwertyuiop[]'.split(''),
     homeRow: 'asdfghjkl;\'\\'.split(''),
     bottomRow: '`zxcvbnm,./'.split(''),
-    homeRowWords: ['as', 'fad', 'gag', 'gal', 'lag', 'lad', 'dad', 'saga', 'hash', 'shall', 'slash', 'salad', 'alaska', 'salads']
+    homeRowWords: ['add', 'alaska', 'as', 'ask', 'dad', 'fad', 'flagfalls', 'gag', 'gal', 'galagala', 'galahads', 'hadassahs',
+      'haggadahs', 'hash', 'haskalah', 'lad', 'lag', 'saga', 'salad', 'salads', 'shakalshas', 'shall', 'slash']
   };
 
-  // TODO: add more words and more word lessons (based on word length maybe?)
   private readonly paliMeat = {
     numberRow: '§1234567890-='.split(''),
     topRow: 'ūbokpvmurl[]'.split(''),
     homeRow: 'meātsnhai;\'\\'.split(''),
     bottomRow: '`ḍgcdjñy,./'.split(''),
-    homeRowWords: ['ehi', 'ena', 'enta', 'esa', 'issita', 'ita', 'iti', 'saṃ', 'saṃhanana', 'sasati', 'sa', 'sassa', 'taṃ', 'tāhaṃ',
-      'āsaṃ', 'āsaṃsa', 'āsaṃsā', 'āsaṃsati', 'āsaṃsā', 'antati', 'antānanta', 'ante', 'nissinnā', 'nitthitaṃ', 'etāni', 'tāni', 'tini',
-      'hanta', 'anta', 'nissitaṃ']
+    homeRowWords: ['a-hata', 'a-hita', 'a-hiṃsā', 'a-hāsa', 'a-nissita', 'a-sa', 'a-sacca', 'a-sahana', 'a-sahita', 'a-sat', 'a-sati',
+      'a-satta', 'a-sattha', 'a-sesa', 'a-sita', 'a-sāhasa', 'a-sāta', 'a-tithi', 'a-titta', 'a-tittha', 'ahaha', 'ahaṃ',
+      'ahaṃ', 'ahe', 'ahi', 'ahāsi', 'an-anta', 'an-attha', 'an-itthi', 'anamha', 'anantaṃ', 'anattattā', 'anattā', 'anna',
+      'anna', 'annā', 'ant-antena', 'anta', 'anta', 'antati', 'ante', 'antena', 'anti', 'antānanta', 'asa', 'asanta', 'asanti',
+      'asati', 'asati', 'asaṃ', 'asi', 'asita', 'asita', 'asma', 'assa', 'assasati', 'assasi', 'assattha', 'assita', 'assā',
+      'assāseti', 'atha', 'ati', 'ati-santa', 'ati-sithila', 'att-attha', 'atta', 'atta', 'attanā', 'attha', 'atthata', 'atthaṃ',
+      'atthe', 'atthi', 'atthi', 'aṃsa', 'aṃsa', 'aṃsi', 'aṃsā', 'ehi', 'ena', 'enta', 'esa', 'esana', 'esanā', 'esati', 'esi',
+      'esā', 'eta', 'etaṃ', 'ete', 'eti', 'etta', 'ettha', 'etā', 'etāni', 'ha', 'hanta', 'hatthi', 'hatthinā', 'hatthā', 'hi',
+      'iha', 'isi', 'isitta', 'issati', 'issattha', 'issita', 'issā', 'issāsa', 'ita', 'iti', 'itthatta', 'itthaṃ', 'itthi', 'lsata',
+      'lseti', 'na', 'naṃ', 'netaṃ', 'nissinnā', 'nissitaṃ', 'nitthitaṃ', 'sa', 'saha', 'sahassa', 'sahasā', 'sahati', 'sahatthena',
+      'sahatthā', 'sahita', 'sanantaṃ', 'santa', 'santasati', 'santasita', 'santataṃ', 'santati', 'santatta', 'santhana', 'santhata',
+      'santhāna', 'santi', 'santāna', 'santāneti', 'santāsa', 'santāsin', 'sasa', 'sasati', 'sassa', 'sassata', 'sat', 'sata', 'satataṃ',
+      'sataṃ', 'sati', 'satima', 'satimat', 'satta', 'sattama', 'sattati', 'satthā', 'saṃ', 'saṃhanana', 'saṃhanati', 'saṃhasati',
+      'saṃhata', 'saṃhita', 'saṃsad', 'saṃsanna', 'saṃsati', 'saṃsatta', 'saṃsattha', 'saṃvihita', 'se', 'sehi', 'sena', 'senaṃ',
+      'senā', 'senāsana', 'sesa', 'seseti', 'seta', 'seti', 'sevana', 'sevati', 'sevā', 'sineha', 'sinehana', 'sineheti', 'sinehita',
+      'sinna', 'sissati', 'sita', 'sitta', 'sittha', 'siṃsā', 'sā', 'sāhasa', 'sāhasaṃ', 'sāhasena', 'sāsa', 'sāsana', 'sāsanā',
+      'sāsava', 'ta', 'tahaṃ', 'tahiṃ', 'tassa', 'tatta', 'tattha', 'taṃ', 'te', 'tehi', 'tena', 'tenā', 'tesaṃ', 'theta', 'ti',
+      'tini', 'tinta', 'tissa', 'tithi', 'titta', 'tittha', 'tiṃsa', 'tiṃsati', 'tā', 'tāhaṃ', 'tāni', 'tāsa', 'tāsaṃ', 'tāseti',
+      'tāsita', 'tāta', 'āna', 'ānana', 'ānana', 'ānata', 'āneti', 'āsa', 'āsana', 'āsanna', 'āsannaṃ', 'āsanā', 'āsasāna', 'āsati',
+      'āsatta', 'āsatta', 'āsatti', 'āsaṃ', 'āsaṃsa', 'āsaṃsati', 'āsaṃsā', 'āsbnn', 'āsi', 'āsimhā', 'āsisanā', 'āsisitattaṃ', 'āsita',
+      'āsitta', 'āsittha', 'āsiṃ', 'āsiṃsanā', 'āsiṃsati', 'āsiṃsitattaṃ', 'āsā', 'ātata', 'ātatta']
   };
 
   private readonly layouts = {qwerty: this.qwerty, paliMeat: this.paliMeat};
@@ -56,55 +74,58 @@ export class LessonService {
         chars = basicHomeRow;
         break;
       case 5:
-        words = layout.homeRowWords;
+        words = layout.homeRowWords.filter(word => !word.includes('-') && word.length < 5);
         break;
       case 6:
-        chars = [...basicHomeRow, layout.topRow[3], layout.topRow[6]];
+        words = layout.homeRowWords;
         break;
       case 7:
-        chars = [...basicHomeRow, layout.topRow[2], layout.topRow[3], layout.topRow[6], layout.topRow[7]];
+        chars = [...basicHomeRow, layout.topRow[3], layout.topRow[6]];
         break;
       case 8:
+        chars = [...basicHomeRow, layout.topRow[2], layout.topRow[3], layout.topRow[6], layout.topRow[7]];
+        break;
+      case 9:
         chars = [...basicHomeRow, layout.topRow[1], layout.topRow[2], layout.topRow[3], layout.topRow[6], layout.topRow[7],
           layout.topRow[8]];
         break;
-      case 9:
+      case 10:
         chars = [...basicHomeRow, ...basicTopRow];
         break;
-      case 10:
+      case 11:
         chars = [...basicHomeRow, layout.bottomRow[3], layout.bottomRow[7]];
         break;
-      case 11:
+      case 12:
         chars = [...basicHomeRow, layout.bottomRow[3], layout.bottomRow[4], layout.bottomRow[6], layout.bottomRow[7]];
         break;
-      case 12:
+      case 13:
         chars = [...basicHomeRow, ...basicBottomRow];
         break;
-      case 13:
+      case 14:
         chars = [...basicHomeRow, ...basicBottomRow, layout.topRow[2], layout.topRow[3], layout.topRow[6], layout.topRow[7]];
         break;
-      case 14:
+      case 15:
         chars = [...basicHomeRow, ...basicTopRow, ...basicBottomRow];
         break;
-      case 15:
+      case 16:
         chars = [...layout.homeRow, ...basicTopRow, ...basicBottomRow];
         break;
-      case 16:
+      case 17:
         chars = [...layout.homeRow, ...layout.topRow, ...basicBottomRow];
         break;
-      case 17:
+      case 18:
         chars = [...layout.homeRow, ...basicTopRow, ...layout.bottomRow];
         break;
-      case 18:
+      case 19:
         chars = [...layout.homeRow, ...layout.topRow, ...layout.bottomRow];
         break;
-      case 19:
+      case 20:
         chars = [...basicHomeRow, ...basicTopRow, ...basicBottomRow, ...basicNumberRow];
         break;
-      case 20:
+      case 21:
         chars = [...layout.homeRow, ...layout.topRow, ...layout.bottomRow, ...basicNumberRow];
         break;
-      case 21:
+      case 22:
         chars = [...layout.homeRow, ...layout.topRow, ...layout.bottomRow, ...layout.numberRow];
         break;
 

@@ -27,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ScoreListComponent} from './score/score-list/score-list.component';
 import {InfoComponent} from './info/info.component';
 import {UserDialogComponent} from './user/user-dialog.component';
+import {HelpComponent} from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {UserDialogComponent} from './user/user-dialog.component';
     LessonViewComponent,
     ScoreListComponent,
     InfoComponent,
-    UserDialogComponent
+    UserDialogComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

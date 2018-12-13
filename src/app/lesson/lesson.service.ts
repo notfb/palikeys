@@ -7,6 +7,9 @@ import {englishLong, paliLong} from './longTexts';
 })
 export class LessonService {
 
+  // TODO: remove  this dirty hack and handle the focus issue properly
+  keepFocus = true;
+
   static readonly MAX_LESSON = 25;
   static readonly LONG_LESSON_NUMBER = 23;
 

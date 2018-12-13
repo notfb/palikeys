@@ -58,8 +58,9 @@ export class LessonViewComponent implements OnInit {
 
   // The text area needs to keep the focus to make sure key events are send to it.
   onTextAreaBlur(): void {
-    this.textarea.nativeElement.focus();
-
+    if (this.lessonService.keepFocus) {
+      this.textarea.nativeElement.focus();
+    }
   }
 
   onKey(event: { key: string }) {

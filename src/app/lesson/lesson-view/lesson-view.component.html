@@ -3,8 +3,8 @@
     <mat-card-title>
       <div>Lesson {{lessonNumber}}</div>
       <div style="font-size: 0.7em; color: grey">
-        <span>Lesson Score: {{lessonScore}}</span>
-        <span *ngIf="score" class="pk-padding-left" style="vertical-align: middle; display: inline">
+        <span><mat-icon>notes</mat-icon>Lesson Score: {{lessonScore}}</span>
+        <span *ngIf="score" class="pk-padding-left">
           <mat-icon>bar_chart</mat-icon>High Score: {{score.score}}
         </span>
       </div>

@@ -40,14 +40,18 @@ export class LessonViewComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (params: Params) => {
-        this.lessonNumber = parseInt(params['lessonNumber'], 10);
-        this.layoutType = params['layoutType'];
-        this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
         this.finishedMessage = '';
         this.errorMessage = '';
         this.lessonScore = 0;
         this.cursorPos = 0;
-        this.textarea.nativeElement.focus();
+        this.lessonNumber = parseInt(params['lessonNumber'], 10);
+        this.layoutType = params['layoutType'];
+        if (this.layoutType && this.lessonNumber) {
+          this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
+        }
+        if (this.textarea) {
+          this.textarea.nativeElement.focus();
+        }
       }
     );
   }
@@ -58,7 +62,7 @@ export class LessonViewComponent implements OnInit {
 
   // The text area needs to keep the focus to make sure key events are send to it.
   onTextAreaBlur(): void {
-    if (this.lessonService.keepFocus) {
+    if (this.lessonService.keepFocus && this.textarea) {
       this.textarea.nativeElement.focus();
     }
   }

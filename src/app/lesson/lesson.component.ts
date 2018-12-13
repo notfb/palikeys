@@ -17,10 +17,18 @@ export class LessonComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.scoreService.get(this.userService.username).subscribe((score: Score) => this.score = score);
-    this.userService.updates().pipe(
-      switchMap(username => this.scoreService.getByName(username)))
-      .subscribe(score => this.score = score);
+    this.userService.updates()
+      .pipe(switchMap(username => this.scoreService.getByName(username)))
+      .subscribe(
+        score => this.score = score,
+        error => {
+          if (error.status === 404) {
+            // FIXME: should not use userService.username but username from initial switchMap call
+            this.scoreService.create({username: this.userService.username, score: 0})
+              .pipe(switchMap(() => this.scoreService.getByName(this.userService.username)))
+              .subscribe(score => this.score = score);
+          }
+        });
   }
 
   onScoreIncrement(score: number) {

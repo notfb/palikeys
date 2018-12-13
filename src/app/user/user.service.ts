@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private _username = 'anonymous';
-  private readonly userUpdates: Subject<string> = new Subject();
+  private readonly userUpdates: Subject<string> = new BehaviorSubject(this._username);
 
   constructor() {
   }
@@ -17,7 +17,6 @@ export class UserService {
 
   set username(username: string) {
     this._username = username;
-    console.log('new username', username);
     this.userUpdates.next(username);
   }
 
@@ -25,4 +24,5 @@ export class UserService {
   updates(): Observable<string> {
     return this.userUpdates.asObservable();
   }
+
 }

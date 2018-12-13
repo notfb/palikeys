@@ -33,5 +33,7 @@ export class ScoreService {
     return this.http.get(ScoreService.BASE_URL) as Observable<Score[]>;
   }
 
-
+  create(score: { username: string; score: number }): Observable<Object> {
+    return this.http.post(ScoreService.BASE_URL, score) as Observable<Object>;
+  }
 }

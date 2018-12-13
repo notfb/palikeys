@@ -37,7 +37,10 @@
           <label for="keyboardLayoutSelect" class="pk-padding-right-xs">
             <mat-icon aria-label="Previous">keyboard</mat-icon>
           </label>
-          <select id="keyboardLayoutSelect" [(ngModel)]="layoutType" (ngModelChange)="onKeyboardLayoutChange()">
+          <select id="keyboardLayoutSelect"
+                  [(ngModel)]="layoutType"
+                  (ngModelChange)="onKeyboardLayoutChange()"
+                  matTooltip="Change Keyboard Layout">
             <option [value]="lo.value" *ngFor="let lo of layoutOptions">{{lo.name}}</option>
           </select>
         </mat-grid-tile>

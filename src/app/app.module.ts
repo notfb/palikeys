@@ -15,7 +15,8 @@ import {
   MatIconModule,
   MatInputModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 import {ScoreService} from './score/score.service';
 import {LessonComponent} from './lesson/lesson.component';
@@ -51,7 +52,8 @@ import {UserDialogComponent} from './user/user-dialog.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTooltipModule
   ],
   entryComponents: [
     UserDialogComponent,

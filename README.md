@@ -58,5 +58,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - The way the lesson.component handles score creation is a bit messy
 
 - Support offline updates and creation of scores (cache and sent later)
+- Write a little user guide
 
 There are more TODOs and FIXMEs in the code.

@@ -42,7 +42,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## ToDo / Opportunities for Contribution
 
 - Display an image of the keyboard layout below the text (do it with CSS? see http://jsfiddle.net/ferencik/EpnL3/ )
-- Support mapping from QWERTY / QWERTZ Layout to Pali Layout via the webapp (just map the keys via typescript, instead of having the user install a custom keymap)
 
 - Write unit tests
 - enforce test coverage of at least 80%
@@ -52,6 +51,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - Remove the dirty LessonService.keepFocus hack
 - The way the lesson.component handles score creation is a bit messy
 
-- Support offline updates and creation of scores (cache and sent later)
+- Support offline updates and creation of scores (cache and sent later) see https://blog.formpl.us/how-to-handle-post-put-requests-in-offline-applications-using-service-workers-indexedb-and-da7d0798a9ab for exampe
 
 There are more TODOs and FIXMEs in the code.

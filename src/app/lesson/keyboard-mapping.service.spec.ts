@@ -48,4 +48,9 @@ describe('KeyboardMappingService', () => {
     expect(service.translate('y', 'qwertyToPaliMeat')).toBe('v');
     expect(service.translate('z', 'qwertyToPaliMeat')).toBe('ḍ');
   });
+
+  it('should translate ignore unknown values', () => {
+    const service: KeyboardMappingService = TestBed.get(KeyboardMappingService);
+    expect(service.translate('UNKNOWN',)).toBe('UNKNOWN');
+  });
 });

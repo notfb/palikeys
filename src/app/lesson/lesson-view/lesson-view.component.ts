@@ -20,6 +20,7 @@ export class LessonViewComponent implements OnInit {
   lessonNumber = 1;
   lesson = '';
   cursorPos = 0;
+  timeStampStart: number;
 
   errorMessage = '';
   finishedMessage = '';
@@ -89,9 +90,14 @@ export class LessonViewComponent implements OnInit {
       this.resetAndDisplayError(textArea);
     }
 
+    if (this.cursorPos === 1) {
+      this.timeStampStart = Date.now();
+    }
+
     if (!this.finishedMessage && this.cursorPos >= this.lesson.length) {
       this.lessonScore += 100 * this.lessonNumber;
-      this.finishedMessage = `Lesson completed! High score +${this.lessonScore} 🙌`;
+      this.finishedMessage = `Lesson completed! High score +${this.lessonScore} 🙌 ` +
+        `(${this.lessonService.calcWordsPerMinute(this.timeStampStart, this.lesson, this.cursorPos)} words/minute)`;
       this.scoreIncrement.emit(this.lessonScore);
       this.lessonScore = 0;
     }
@@ -113,15 +119,16 @@ export class LessonViewComponent implements OnInit {
 
   // we are strict about making errors -> generate new lesson and restart
   private resetAndDisplayError(textArea: HTMLTextAreaElement) {
-    this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
-    textArea.setSelectionRange(0, 0);
-    this.cursorPos = 0;
     this.errorMessage = 'You missed a character, please start over!';
     this.lessonScore = this.lessonScore > 20 ? this.lessonScore - 20 : 0;
     if (this.lessonScore > 0) {
       this.scoreIncrement.emit(this.lessonScore);
-      this.errorMessage += ` High score +${this.lessonScore}`;
+      this.errorMessage += ` High score +${this.lessonScore} ` +
+        `(${this.lessonService.calcWordsPerMinute(this.timeStampStart, this.lesson, this.cursorPos)} words/minute)`;
     }
+    this.lesson = this.lessonService.make(this.lessonNumber, this.layoutType);
+    textArea.setSelectionRange(0, 0);
+    this.cursorPos = 0;
     this.lessonScore = 0;
   }
 

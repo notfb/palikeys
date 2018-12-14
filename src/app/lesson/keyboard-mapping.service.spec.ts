@@ -51,6 +51,6 @@ describe('KeyboardMappingService', () => {
 
   it('should translate ignore unknown values', () => {
     const service: KeyboardMappingService = TestBed.get(KeyboardMappingService);
-    expect(service.translate('UNKNOWN',)).toBe('UNKNOWN');
+    expect(service.translate('UNKNOWN')).toBe('UNKNOWN');
   });
 });

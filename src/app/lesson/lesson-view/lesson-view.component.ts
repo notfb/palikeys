@@ -3,6 +3,7 @@ import {LessonService} from '../lesson.service';
 import {KeyboardLayoutType} from '../_models/keyboard.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Score} from '../../score/_models/scroe.model';
+import {KeyboardMapping, KeyboardMappingService} from '../keyboard-mapping.service';
 
 @Component({
   selector: 'app-lesson-view',
@@ -28,14 +29,22 @@ export class LessonViewComponent implements OnInit {
 
   layoutType: KeyboardLayoutType = 'qwerty';
   layoutOptions: { name: string, value: KeyboardLayoutType }[] =
-    [{name: 'QWERTY', value: 'qwerty'}, {name: 'Pali Meāt', value: 'paliMeat'}];
+    [{name: 'QWERTY', value: 'qwerty'}, {name: 'Pali Ṃeāt', value: 'paliMeat'}];
+
+  keyboardMapping: KeyboardMapping | false = false;
+  keyboardMappingOptions: { name: string, value: KeyboardMapping }[] =
+    [{name: 'QWERTY -> Pali Ṃeāt', value: 'qwertyToPaliMeat'}, {
+      name: 'QWERTZ -> Pali Ṃeāt',
+      value: 'qwertzToPaliMeat'
+    }];
 
 
   @ViewChild('textArea') private textarea: ElementRef<HTMLTextAreaElement>;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private lessonService: LessonService) {
+              private lessonService: LessonService,
+              private keyboardMappingService: KeyboardMappingService) {
   }
 
   ngOnInit() {
@@ -77,6 +86,10 @@ export class LessonViewComponent implements OnInit {
       return;
     } else if (key.toLowerCase() === 'enter') {
       key = '\n';
+    }
+
+    if (this.keyboardMapping) {
+      key = this.keyboardMappingService.translate(key, this.keyboardMapping);
     }
 
     if (this.finishedMessage) {

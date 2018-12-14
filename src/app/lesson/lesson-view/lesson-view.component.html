@@ -43,6 +43,15 @@
                   matTooltip="Change Keyboard Layout">
             <option [value]="lo.value" *ngFor="let lo of layoutOptions">{{lo.name}}</option>
           </select>
+          <label for="keyboardLayoutMapping" class="pk-padding-right-xs pk-padding-left">
+            Mapping:
+          </label>
+          <select id="keyboardLayoutMapping"
+                  [(ngModel)]="keyboardMapping"
+                  matTooltip="Select a Keyboard Mapping">
+            <option [value]="false">None</option>
+            <option [value]="lm.value" *ngFor="let lm of keyboardMappingOptions">{{lm.name}}</option>
+          </select>
         </mat-grid-tile>
         <mat-grid-tile style="text-align: right">
           <button mat-icon-button mat-stroked-button *ngIf="lessonNumber < MAX_LESSON"

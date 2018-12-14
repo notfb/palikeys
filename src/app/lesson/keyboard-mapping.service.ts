@@ -6,7 +6,6 @@ interface KeyboardMappingMap {
 
 export type KeyboardMapping = 'qwertyToPaliMeat' | 'qwertzToPaliMeat';
 
-// TODO: use
 @Injectable({
   providedIn: 'root'
 })

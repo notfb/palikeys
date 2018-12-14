@@ -26,7 +26,7 @@ export class LessonService {
   private readonly paliMeat = {
     numberRow: '§1234567890-='.split(''),
     topRow: 'ūbokpvmurl[]'.split(''),
-    homeRow: 'meātsnhai;\'\\'.split(''),
+    homeRow: 'ṃeātsnhai;\'\\'.split(''),
     bottomRow: '`ḍgcdjñy,./'.split(''),
     homeRowWords: ['a-hata', 'a-hita', 'a-hiṃsā', 'a-hāsa', 'a-nissita', 'a-sa', 'a-sacca', 'a-sahana', 'a-sahita', 'a-sat', 'a-sati',
       'a-satta', 'a-sattha', 'a-sesa', 'a-sita', 'a-sāhasa', 'a-sāta', 'a-tithi', 'a-titta', 'a-tittha', 'ahaha', 'ahaṃ',

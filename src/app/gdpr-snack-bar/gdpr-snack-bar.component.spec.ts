@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {GdprSnackBarComponent} from './gdpr-snack-bar.component';
+import {MAT_SNACK_BAR_DATA} from '@angular/material';
 
 describe('GdprSnackBarComponent', () => {
   let component: GdprSnackBarComponent;
@@ -8,7 +9,13 @@ describe('GdprSnackBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [GdprSnackBarComponent]
+      declarations: [GdprSnackBarComponent],
+      providers: [{
+        provide: MAT_SNACK_BAR_DATA, useValue: {
+          dismiss: () => {
+          }
+        }
+      }]
     })
       .compileComponents();
   }));

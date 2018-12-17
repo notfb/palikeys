@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SwUpdate} from '@angular/service-worker';
-import {MatDialog, MatSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar, MatSnackBarRef} from '@angular/material';
 import {UserDialogComponent} from './user/user-dialog.component';
 import {UserService} from './user/user.service';
 import {LessonService} from './lesson/lesson.service';
@@ -13,6 +13,7 @@ import {GdprSnackBarComponent} from './gdpr-snack-bar/gdpr-snack-bar.component';
 })
 export class AppComponent implements OnInit {
   updateAvailable = false;
+  private snackBarRef: MatSnackBarRef<GdprSnackBarComponent>;
 
   constructor(private updates: SwUpdate,
               private dialog: MatDialog,
@@ -25,7 +26,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => this.snackBar.openFromComponent(GdprSnackBarComponent), 500);
+    const config = {data: {dismiss: () => this.dismissSnackBar()}};
+    setTimeout(() => this.snackBarRef = this.snackBar.openFromComponent(GdprSnackBarComponent, config), 500);
   }
 
   openUserDialog() {
@@ -44,5 +46,8 @@ export class AppComponent implements OnInit {
   }
 
 
+  dismissSnackBar() {
+    this.snackBarRef.dismiss();
+  }
 }
 

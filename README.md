@@ -41,8 +41,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## ToDo / Opportunities for Contribution
 
-- Display an image of the keyboard layout below the text (do it with CSS? see http://jsfiddle.net/ferencik/EpnL3/ )
-
 - Write unit tests
 - enforce test coverage of at least 80%
 - Write e2e tests

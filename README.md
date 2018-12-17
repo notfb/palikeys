@@ -49,6 +49,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - Remove the dirty LessonService.keepFocus hack
 - The way the lesson.component handles score creation is a bit messy
 
-- Support offline updates and creation of scores (cache and sent later) see https://blog.formpl.us/how-to-handle-post-put-requests-in-offline-applications-using-service-workers-indexedb-and-da7d0798a9ab for exampe
+- Support offline updates and creation of scores (cache and sent later) see https://blog.formpl.us/how-to-handle-post-put-requests-in-offline-applications-using-service-workers-indexedb-and-da7d0798a9ab for example
 
 There are more TODOs and FIXMEs in the code.

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {KeyboardLayoutType} from './_models/keyboard.model';
+import {KeyboardLayout, KeyboardLayoutType, LessonInput} from './_models/keyboard.model';
 import {englishLong, paliLong} from './longTexts';
+import {Error} from 'tslint/lib/error';
 
 @Injectable({
   providedIn: 'root'
@@ -30,31 +31,54 @@ export class LessonService {
     bottomRow: '`ḍgcdjñy,./'.split(''),
     homeRowWords: ['a-hata', 'a-hita', 'a-hiṃsā', 'a-hāsa', 'a-nissita', 'a-sa', 'a-sacca', 'a-sahana', 'a-sahita', 'a-sat', 'a-sati',
       'a-satta', 'a-sattha', 'a-sesa', 'a-sita', 'a-sāhasa', 'a-sāta', 'a-tithi', 'a-titta', 'a-tittha', 'ahaha', 'ahaṃ',
-      'ahaṃ', 'ahe', 'ahi', 'ahāsi', 'an-anta', 'an-attha', 'an-itthi', 'anamha', 'anantaṃ', 'anattattā', 'anattā', 'anna',
-      'anna', 'annā', 'ant-antena', 'anta', 'anta', 'antati', 'ante', 'antena', 'anti', 'antānanta', 'asa', 'asanta', 'asanti',
-      'asati', 'asati', 'asaṃ', 'asi', 'asita', 'asita', 'asma', 'assa', 'assasati', 'assasi', 'assattha', 'assita', 'assā',
-      'assāseti', 'atha', 'ati', 'ati-santa', 'ati-sithila', 'att-attha', 'atta', 'atta', 'attanā', 'attha', 'atthata', 'atthaṃ',
-      'atthe', 'atthi', 'atthi', 'aṃsa', 'aṃsa', 'aṃsi', 'aṃsā', 'ehi', 'ena', 'enta', 'esa', 'esana', 'esanā', 'esati', 'esi',
-      'esā', 'eta', 'etaṃ', 'ete', 'eti', 'etta', 'ettha', 'etā', 'etāni', 'ha', 'hanta', 'hatthi', 'hatthinā', 'hatthā', 'hi',
-      'iha', 'isi', 'isitta', 'issati', 'issattha', 'issita', 'issā', 'issāsa', 'ita', 'iti', 'itthatta', 'itthaṃ', 'itthi', 'lsata',
-      'lseti', 'na', 'naṃ', 'netaṃ', 'nissinnā', 'nissitaṃ', 'nitthitaṃ', 'sa', 'saha', 'sahassa', 'sahasā', 'sahati', 'sahatthena',
-      'sahatthā', 'sahita', 'sanantaṃ', 'santa', 'santasati', 'santasita', 'santataṃ', 'santati', 'santatta', 'santhana', 'santhata',
-      'santhāna', 'santi', 'santāna', 'santāneti', 'santāsa', 'santāsin', 'sasa', 'sasati', 'sassa', 'sassata', 'sat', 'sata', 'satataṃ',
-      'sataṃ', 'sati', 'satima', 'satimat', 'satta', 'sattama', 'sattati', 'satthā', 'saṃ', 'saṃhanana', 'saṃhanati', 'saṃhasati',
-      'saṃhata', 'saṃhita', 'saṃsad', 'saṃsanna', 'saṃsati', 'saṃsatta', 'saṃsattha', 'saṃvihita', 'se', 'sehi', 'sena', 'senaṃ',
-      'senā', 'senāsana', 'sesa', 'seseti', 'seta', 'seti', 'sevana', 'sevati', 'sevā', 'sineha', 'sinehana', 'sineheti', 'sinehita',
-      'sinna', 'sissati', 'sita', 'sitta', 'sittha', 'siṃsā', 'sā', 'sāhasa', 'sāhasaṃ', 'sāhasena', 'sāsa', 'sāsana', 'sāsanā',
-      'sāsava', 'ta', 'tahaṃ', 'tahiṃ', 'tassa', 'tatta', 'tattha', 'taṃ', 'te', 'tehi', 'tena', 'tenā', 'tesaṃ', 'theta', 'ti',
+      'ahaṃ', 'ahe', 'ahi', 'ahāsi', 'an-anta', 'an-attha', 'an-itthi', 'anantaṃ', 'anattattā', 'anattā', 'anna', 'anna', 'annā',
+      'ant-antena', 'anta', 'anta', 'antati', 'ante', 'antena', 'anti', 'antānanta', 'asa', 'asanta', 'asanti', 'asati', 'asati',
+      'asaṃ', 'asi', 'asita', 'asita', 'assa', 'assasati', 'assasi', 'assattha', 'assita', 'assā', 'assāseti', 'atha', 'ati',
+      'ati-santa', 'ati-sithila', 'att-attha', 'atta', 'atta', 'attanā', 'attha', 'atthata', 'atthaṃ', 'atthe', 'atthi', 'atthi',
+      'aṃsa', 'aṃsa', 'aṃsi', 'aṃsā', 'ehi', 'ena', 'enta', 'esa', 'esana', 'esanā', 'esati', 'esi', 'esā', 'eta', 'etaṃ', 'ete', 'eti',
+      'etta', 'ettha', 'etā', 'etāni', 'ha', 'hanta', 'hatthi', 'hatthinā', 'hatthā', 'hi', 'iha', 'isi', 'isitta', 'issati', 'issattha',
+      'issita', 'issā', 'issāsa', 'ita', 'iti', 'itthatta', 'itthaṃ', 'itthi', 'lsata', 'lseti', 'na', 'naṃ', 'netaṃ', 'nissinnā',
+      'nissitaṃ', 'nitthitaṃ', 'sa', 'saha', 'sahassa', 'sahasā', 'sahati', 'sahatthena', 'sahatthā', 'sahita', 'sanantaṃ', 'santa',
+      'santasati', 'santasita', 'santataṃ', 'santati', 'santatta', 'santhana', 'santhata', 'santhāna', 'santi', 'santāna', 'santāneti',
+      'santāsa', 'santāsin', 'sasa', 'sasati', 'sassa', 'sassata', 'sat', 'sata', 'satataṃ', 'sataṃ', 'sati', 'satta', 'sattati',
+      'satthā', 'saṃ', 'saṃhanana', 'saṃhanati', 'saṃhasati', 'saṃhata', 'saṃhita', 'saṃsad', 'saṃsanna', 'saṃsati', 'saṃsatta',
+      'saṃsattha', 'se', 'sehi', 'sena', 'senaṃ', 'senā', 'senāsana', 'sesa', 'seseti', 'seta', 'seti', 'sineha', 'sinehana', 'sineheti',
+      'sinehita', 'sinna', 'sissati', 'sita', 'sitta', 'sittha', 'siṃsā', 'sā', 'sāhasa', 'sāhasaṃ', 'sāhasena', 'sāsa', 'sāsana',
+      'sāsanā', 'ta', 'tahaṃ', 'tahiṃ', 'tassa', 'tatta', 'tattha', 'taṃ', 'te', 'tehi', 'tena', 'tenā', 'tesaṃ', 'theta', 'ti',
       'tini', 'tinta', 'tissa', 'tithi', 'titta', 'tittha', 'tiṃsa', 'tiṃsati', 'tā', 'tāhaṃ', 'tāni', 'tāsa', 'tāsaṃ', 'tāseti',
       'tāsita', 'tāta', 'āna', 'ānana', 'ānana', 'ānata', 'āneti', 'āsa', 'āsana', 'āsanna', 'āsannaṃ', 'āsanā', 'āsasāna', 'āsati',
-      'āsatta', 'āsatta', 'āsatti', 'āsaṃ', 'āsaṃsa', 'āsaṃsati', 'āsaṃsā', 'āsbnn', 'āsi', 'āsimhā', 'āsisanā', 'āsisitattaṃ', 'āsita',
-      'āsitta', 'āsittha', 'āsiṃ', 'āsiṃsanā', 'āsiṃsati', 'āsiṃsitattaṃ', 'āsā', 'ātata', 'ātatta'],
+      'āsatta', 'āsatta', 'āsatti', 'āsaṃ', 'āsaṃsa', 'āsaṃsati', 'āsaṃsā', 'āsbnn', 'āsi', 'āsisanā', 'āsisitattaṃ', 'āsita', 'āsitta',
+      'āsittha', 'āsiṃ', 'āsiṃsanā', 'āsiṃsati', 'āsiṃsitattaṃ', 'āsā', 'ātata', 'ātatta'],
     texts: paliLong
   };
 
   private readonly layouts = {qwerty: this.qwerty, paliMeat: this.paliMeat};
 
+  layout(layoutType: KeyboardLayoutType): KeyboardLayout {
+    const layout = this.layouts[layoutType];
+    if (!layout) {
+      throw new Error(`Invalid keyboard layout type ${layoutType}`);
+    }
+    return {
+      topRow: [...layout.topRow],
+      homeRow: [...layout.homeRow],
+      bottomRow: [...layout.bottomRow],
+    };
+  }
+
   make(lessonNumber: number, layoutType: KeyboardLayoutType = 'qwerty', length: number = 10 * 50) {
+    const {chars, words, text}: LessonInput = this.makeLessonInput(lessonNumber, layoutType);
+
+    if (text) {
+      return text;
+    }
+    if (words.length > 0) {
+      return this.makeLessonFromWords(words, length);
+    }
+    return this.makeLessonFromChars(chars, length);
+  }
+
+  makeLessonInput(lessonNumber: number, layoutType: KeyboardLayoutType): LessonInput {
     const layout = this.layouts[layoutType];
     if (!layout) {
       throw new Error(`Invalid keyboard layout type ${layoutType}`);
@@ -67,6 +91,7 @@ export class LessonService {
     const basicNumberRow = layout.numberRow.slice(1, 11);
     let chars: string[] = [];
     let words: string[] = [];
+    let text: string = '';
     switch (lessonNumber) {
       case 1:
         chars = [layout.homeRow[3], layout.homeRow[6]];
@@ -136,20 +161,19 @@ export class LessonService {
         chars = [...layout.homeRow, ...layout.topRow, ...layout.bottomRow, ...layout.numberRow];
         break;
       case 23:
-        return layout.texts[0];
+        text = layout.texts[0];
+        break;
       case 24:
-        return layout.texts[1];
+        text = layout.texts[1];
+        break;
       case 25:
-        return layout.texts[2];
+        text = layout.texts[2];
+        break;
 
       default:
         throw new Error(`Invalid lesson number: ${lessonNumber}`);
     }
-
-    if (words.length > 0) {
-      return this.makeLessonFromWords(words, length);
-    }
-    return this.makeLessonFromChars(chars, length);
+    return {chars, words, text};
   }
 
   calcWordsPerMinute(timeStampStart: number, lesson: string, cursorPos: number): number {
@@ -185,4 +209,5 @@ export class LessonService {
     }
     return lesson.trim();
   }
+
 }

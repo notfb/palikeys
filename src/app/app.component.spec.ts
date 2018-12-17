@@ -4,7 +4,7 @@ import {AppComponent} from './app.component';
 import {SwUpdate} from '@angular/service-worker';
 import {SwUpdateMock} from './swUpdate.mock';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {MatDialog} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,6 +19,7 @@ describe('AppComponent', () => {
         {provide: SwUpdate, useClass: SwUpdateMock},
         // TODO: inject proper mock
         {provide: MatDialog, useInstance: {}},
+        {provide: MatSnackBar, useInstance: {}},
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();

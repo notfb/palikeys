@@ -20,7 +20,7 @@ export class LessonService {
     homeRow: 'asdfghjkl;\'\\'.split(''),
     bottomRow: '`zxcvbnm,./'.split(''),
     homeRowWords: ['add', 'alaska', 'as', 'ask', 'dad', 'fad', 'flagfalls', 'gag', 'gal', 'galagala', 'galahads', 'hadassahs',
-      'haggadahs', 'hash', 'haskalah', 'lad', 'lag', 'saga', 'salad', 'salads', 'shakalshas', 'shall', 'slash'],
+      'haggadahs', 'hash', 'haskalah', 'lad', 'lag', 'saga', 'salad', 'salads', 'shakalshas', 'shall', 'slash', 'jfk'],
     texts: englishLong
   };
 

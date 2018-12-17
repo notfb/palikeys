@@ -14,6 +14,7 @@ import {
   MatGridListModule,
   MatIconModule,
   MatInputModule,
+  MatSnackBarModule,
   MatTableModule,
   MatToolbarModule,
   MatTooltipModule
@@ -29,6 +30,7 @@ import {InfoComponent} from './info/info.component';
 import {UserDialogComponent} from './user/user-dialog.component';
 import {HelpComponent} from './help/help.component';
 import {LayoutPictureComponent} from './lesson/layout-picture/layout-picture.component';
+import {GdprSnackBarComponent} from './gdpr-snack-bar/gdpr-snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {LayoutPictureComponent} from './lesson/layout-picture/layout-picture.com
     InfoComponent,
     UserDialogComponent,
     HelpComponent,
-    LayoutPictureComponent
+    LayoutPictureComponent,
+    GdprSnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -57,10 +60,12 @@ import {LayoutPictureComponent} from './lesson/layout-picture/layout-picture.com
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   entryComponents: [
     UserDialogComponent,
+    GdprSnackBarComponent
   ],
   providers: [ScoreService, LessonService],
   bootstrap: [AppComponent]

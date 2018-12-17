@@ -31,4 +31,8 @@ export class InfoComponent implements OnInit {
           error => this.error = `Failed to delete high score: ${error.message || error}`);
     }
   }
+
+  canDeleteHighScore() {
+    return this.score && typeof this.score === 'object' && this.score.username !== 'anonymous';
+  }
 }

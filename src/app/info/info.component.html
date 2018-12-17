@@ -28,16 +28,18 @@
         <br>
         <div *ngIf="error" style="color: red">ERROR: {{error}}</div>
         Your high score data is: <code>{{ score | json }}</code>
-        <span class="pk-margin-left">
+        <span *ngIf="canDeleteHighScore()" class="pk-margin-left">
         <button mat-raised-button color="warn" (click)="deleteHighScore()">
           <mat-icon aria-label="Lessons" matTooltip="Lessons">delete_forever</mat-icon>
           Delete High Score permanently
         </button>
         </span>
         <div style="color: grey; font-size: 80%; margin-top: 10px;">
-          You might have to change your username clicking the user icon (
+          You might have to change your username by clicking the user icon (
           <mat-icon>account_circle</mat-icon>
-          ) on the top row.
+          ) on the top row to be able to delete it.<br>
+          Anonymous high score data can not be deleted (this is the username everyone uses when they do not provide a
+          custom username).
         </div>
       </div>
     </mat-card-content>

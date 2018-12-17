@@ -41,7 +41,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## ToDo / Opportunities for Contribution
 
-- Store GDPR Accept & user name in session store (update GDPR info on session store and allow deletion)
+- 'GDPR accepted clicked' url query param
+- Store username in url query param
 
 - Write unit tests
 - enforce test coverage of at least 80%

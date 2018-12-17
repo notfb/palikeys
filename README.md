@@ -41,8 +41,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## ToDo / Opportunities for Contribution
 
-- Store username in url query param
-
 - Write unit tests
 - enforce test coverage of at least 80%
 - Write e2e tests

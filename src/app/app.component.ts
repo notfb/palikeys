@@ -35,6 +35,14 @@ export class AppComponent implements OnInit {
         this.snackBarRef = this.snackBar.openFromComponent(GdprSnackBarComponent, config);
       }
     }, 700);
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      const username = params['username'];
+      if (username && typeof username === 'string' && this.userService.username !== username) {
+        this.userService.username = username;
+        console.log('set username to', username);
+      }
+    });
   }
 
   openUserDialog() {
@@ -45,18 +53,17 @@ export class AppComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.userService.username = result;
-      }
       this.lessonService.keepFocus = true;
+      if (result && typeof result === 'string' && this.userService.username !== result) {
+        this.router.navigate([], {queryParams: {username: result}, queryParamsHandling: 'merge'});
+      }
     });
   }
-
 
   dismissSnackBar() {
     if (this.snackBarRef) {
       this.snackBarRef.dismiss();
-      this.router.navigate([], {queryParams: {gdprAccepted: 'true'}});
+      this.router.navigate([], {queryParams: {gdprAccepted: 'true'}, queryParamsHandling: 'merge'});
     }
   }
 }

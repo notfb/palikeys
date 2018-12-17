@@ -36,4 +36,8 @@ export class ScoreService {
   create(score: { username: string; score: number }): Observable<Object> {
     return this.http.post(ScoreService.BASE_URL, score) as Observable<Object>;
   }
+
+  deleteById(id: string) {
+    return this.http.delete(`${ScoreService.BASE_URL}/${id}`) as Observable<Object>;
+  }
 }

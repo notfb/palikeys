@@ -22,10 +22,18 @@
         <a href="https://firebase.google.com/support/privacy/">Privacy and Security in Firebase</a><br>
         <br>
         The only data this site stores are your high scores in this JSON format:<br>
-        <code>{{ '{"id": "A random UUID", username: "A username or nickname", "score": "A number of your high score"}'
-          }}</code><br>
-        If you want this data deleted, feel free to contact me through github (see above) or maybe you can guess the
-        REST endpoint yourself.
+        <code>
+          {{ '{"id": "A random UUID", username: "A username or nickname", "score": "A number of your high score"}' }}
+        </code><br>
+        <br>
+        <div *ngIf="error" style="color: red">ERROR: {{error}}</div>
+        Your high score data is: <code>{{ score | json }}</code>
+        <span class="pk-margin-left">
+        <button mat-raised-button color="warn" (click)="deleteHighScore()">
+          <mat-icon aria-label="Lessons" matTooltip="Lessons">delete_forever</mat-icon>
+          Delete High Score permanently
+        </button>
+        </span>
       </div>
     </mat-card-content>
   </mat-card>

@@ -10,8 +10,8 @@ import {Score} from '../score/_models/scroe.model';
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent implements OnInit {
-  private score: Score | string;
-  private error: string;
+  score: Score | string;
+  error: string;
 
   constructor(private userService: UserService,
               private scoreService: ScoreService) {

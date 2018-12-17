@@ -91,7 +91,7 @@ export class LessonService {
     const basicNumberRow = layout.numberRow.slice(1, 11);
     let chars: string[] = [];
     let words: string[] = [];
-    let text: string = '';
+    let text = '';
     switch (lessonNumber) {
       case 1:
         chars = [layout.homeRow[3], layout.homeRow[6]];

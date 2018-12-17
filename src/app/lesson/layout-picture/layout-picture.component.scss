@@ -32,12 +32,7 @@
   text-shadow: 1px 1px 0px #ffffff;
 }
 
-.keyboardKey:active {
-  position: relative;
-  top: 1px;
-}
-
-.keyboardRow .active {
+.keyboardRow .mark {
   background-color: #0c57a8;
   -moz-box-shadow: inset 0px 1px 0px 0px #9fc5f2;
   -webkit-box-shadow: inset 0px 1px 0px 0px #9fc5f2;

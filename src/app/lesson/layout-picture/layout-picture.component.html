@@ -5,17 +5,17 @@
         <div class="keyboardRow">
           <span class="keyboardKey"
                 *ngFor="let key of layout.topRow"
-                [ngClass]="{'active': activeChars.includes(key)}">{{key}}</span>
+                [ngClass]="{'mark': activeChars.includes(key)}">{{key}}</span>
         </div>
         <div class="keyboardRow">
           <span class="keyboardKey"
                 *ngFor="let key of layout.homeRow"
-                [ngClass]="{'active': activeChars.includes(key)}">{{key}}</span>
+                [ngClass]="{'mark': activeChars.includes(key)}">{{key}}</span>
         </div>
         <div class="keyboardRow">
           <span class="keyboardKey"
                 *ngFor="let key of layout.bottomRow"
-                [ngClass]="{'active': activeChars.includes(key)}">{{key}}</span>
+                [ngClass]="{'mark': activeChars.includes(key)}">{{key}}</span>
         </div>
       </div>
       <mat-card-footer>

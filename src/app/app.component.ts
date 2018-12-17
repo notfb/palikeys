@@ -4,6 +4,7 @@ import {MatDialog, MatSnackBar} from '@angular/material';
 import {UserDialogComponent} from './user/user-dialog.component';
 import {UserService} from './user/user.service';
 import {LessonService} from './lesson/lesson.service';
+import {GdprSnackBarComponent} from './gdpr-snack-bar/gdpr-snack-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.snackBar.openFromComponent(GdprSnackBarComponent);
+    setTimeout(() => this.snackBar.openFromComponent(GdprSnackBarComponent), 500);
   }
 
   openUserDialog() {

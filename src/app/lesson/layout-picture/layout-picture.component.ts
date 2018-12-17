@@ -11,6 +11,7 @@ import {KeyboardLayout, LessonInput} from '../_models/keyboard.model';
 export class LayoutPictureComponent implements OnInit {
   layout: KeyboardLayout = this.lessonService.layout('qwerty');
   activeChars: string[] = [];
+  show = true;
 
   constructor(private activatedRoute: ActivatedRoute,
               private lessonService: LessonService) {

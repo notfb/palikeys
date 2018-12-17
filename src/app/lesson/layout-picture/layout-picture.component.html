@@ -1,7 +1,7 @@
 <div class="pk-padding">
   <mat-card class="pk-text-center">
     <mat-card-content>
-      <div class="keyboard">
+      <div *ngIf="show" class="keyboard">
         <div class="keyboardRow">
           <span class="keyboardKey"
                 *ngFor="let key of layout.topRow"
@@ -18,6 +18,16 @@
                 [ngClass]="{'active': activeChars.includes(key)}">{{key}}</span>
         </div>
       </div>
+      <mat-card-footer>
+        <div class="pk-padding-bottom-s">
+          <button mat-icon-button mat-stroked-button (click)="show = !show">
+            <mat-icon aria-label="Toggle Keyboard Layout Visibility"
+                      matTooltip="{{ show ? 'Hide Keyboard Layout' : 'Show Keyboard Layout'}}">
+              {{show ? 'expand_less' : 'expand_more'}}
+            </mat-icon>
+          </button>
+        </div>
+      </mat-card-footer>
     </mat-card-content>
   </mat-card>
 </div>

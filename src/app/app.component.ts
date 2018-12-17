@@ -5,6 +5,7 @@ import {UserDialogComponent} from './user/user-dialog.component';
 import {UserService} from './user/user.service';
 import {LessonService} from './lesson/lesson.service';
 import {GdprSnackBarComponent} from './gdpr-snack-bar/gdpr-snack-bar.component';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,8 @@ export class AppComponent implements OnInit {
   private snackBarRef: MatSnackBarRef<GdprSnackBarComponent>;
 
   constructor(private updates: SwUpdate,
+              private activatedRoute: ActivatedRoute,
+              private router: Router,
               private dialog: MatDialog,
               private snackBar: MatSnackBar,
               private userService: UserService,
@@ -27,7 +30,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const config = {data: {dismiss: () => this.dismissSnackBar()}};
-    setTimeout(() => this.snackBarRef = this.snackBar.openFromComponent(GdprSnackBarComponent, config), 500);
+    setTimeout(() => {
+      if (this.activatedRoute.snapshot.queryParams['gdprAccepted'] !== 'true') {
+        this.snackBarRef = this.snackBar.openFromComponent(GdprSnackBarComponent, config);
+      }
+    }, 700);
   }
 
   openUserDialog() {
@@ -47,7 +54,10 @@ export class AppComponent implements OnInit {
 
 
   dismissSnackBar() {
-    this.snackBarRef.dismiss();
+    if (this.snackBarRef) {
+      this.snackBarRef.dismiss();
+      this.router.navigate([], {queryParams: {gdprAccepted: 'true'}});
+    }
   }
 }
 

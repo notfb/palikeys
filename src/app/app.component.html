@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <a routerLink="/" class="color-white" style="text-decoration: none;">
+  <a routerLink="/" queryParamsHandling="preserve" class="color-white" style="text-decoration: none;">
     <span class="test-title">Keyboard Tutor &alpha;</span>
   </a>
   <span *ngIf="updateAvailable" class="pk-padding-left">
@@ -10,16 +10,16 @@
     <button mat-icon-button (click)="openUserDialog()">
       <mat-icon aria-label="Username" matTooltip="User Settings">account_circle</mat-icon>
     </button>
-    <button mat-icon-button routerLink="/">
+    <button mat-icon-button routerLink="/" queryParamsHandling="preserve">
       <mat-icon aria-label="Lessons" matTooltip="Lessons">fitness_center</mat-icon>
     </button>
-    <button mat-icon-button routerLink="/score">
+    <button mat-icon-button routerLink="/score" queryParamsHandling="preserve">
       <mat-icon aria-label="High Score" matTooltip="High Score">bar_chart</mat-icon>
     </button>
-    <button mat-icon-button routerLink="/info">
+    <button mat-icon-button routerLink="/info" queryParamsHandling="preserve">
       <mat-icon aria-label="Info" matTooltip="Information">info</mat-icon>
     </button>
-    <button mat-icon-button routerLink="/help">
+    <button mat-icon-button routerLink="/help" queryParamsHandling="preserve">
       <mat-icon aria-label="Info" matTooltip="User Guide">help</mat-icon>
     </button>
     <button mat-icon-button>

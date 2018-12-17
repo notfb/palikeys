@@ -41,7 +41,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## ToDo / Opportunities for Contribution
 
-- 'GDPR accepted clicked' url query param
 - Store username in url query param
 
 - Write unit tests

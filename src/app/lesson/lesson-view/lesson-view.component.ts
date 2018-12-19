@@ -33,10 +33,11 @@ export class LessonViewComponent implements OnInit {
 
   keyboardMapping: KeyboardMapping | false = false;
   keyboardMappingOptions: { name: string, value: KeyboardMapping }[] =
-    [{name: 'QWERTY -> Pali Ṃeāt', value: 'qwertyToPaliMeat'}, {
-      name: 'QWERTZ -> Pali Ṃeāt',
-      value: 'qwertzToPaliMeat'
-    }];
+    [{name: 'QWERTY -> Pali Ṃeāt', value: 'qwertyToPaliMeat'},
+      {name: 'QWERTZ -> Pali Ṃeāt', value: 'qwertzToPaliMeat'},
+      {name: 'QWERTY -> QWPR', value: 'qwertyToQwpr'},
+      {name: 'QWERTZ -> QWPR', value: 'qwertzToQwpr'},
+    ];
 
 
   @ViewChild('textArea') private textarea: ElementRef<HTMLTextAreaElement>;

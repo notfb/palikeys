@@ -4,7 +4,7 @@ interface KeyboardMappingMap {
   [_: string]: string;
 }
 
-export type KeyboardMapping = 'qwertyToPaliMeat' | 'qwertzToPaliMeat';
+export type KeyboardMapping = 'qwertyToPaliMeat' | 'qwertzToPaliMeat' | 'qwertyToQwpr' | 'qwertzToQwpr';
 
 @Injectable({
   providedIn: 'root'
@@ -59,7 +59,6 @@ export class KeyboardMappingService {
     'i': 'k',
     'o': 'l',
     'p': ':',
-
     'a': 'a',
     's': 's',
     'd': 'd',
@@ -69,7 +68,6 @@ export class KeyboardMappingService {
     'j': 'n',
     'k': 'i',
     'l': 'o',
-
     'z': 'z',
     'x': 'x',
     'c': 'c',
@@ -106,6 +104,5 @@ export class KeyboardMappingService {
     swapped['y'] = zMapping;
     return swapped;
   }
-
 
 }

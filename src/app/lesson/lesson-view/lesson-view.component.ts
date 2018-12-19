@@ -115,6 +115,9 @@ export class LessonViewComponent implements OnInit {
       this.scoreIncrement.emit(this.lessonScore);
       this.lessonScore = 0;
     }
+
+    // prevent space bar from scrolling the page
+    return false;
   }
 
   makeLessonLink(offset = 0) {

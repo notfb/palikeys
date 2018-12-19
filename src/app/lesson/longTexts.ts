@@ -1,5 +1,5 @@
-export let paliLong: string[] = [];
-export let englishLong: string[] = [];
+export let paliLong: string[];
+export let englishLong: string[];
 
 const dn34Pali: string[] = [];
 const dn34English: string[] = [];
@@ -186,6 +186,7 @@ patimokkhaEnglish[7] = '12. In case a bhikkhu is by nature difficult to admonish
   'And should that bhikkhu, thus admonished by the bhikkhus, persist as before, the bhikkhus are to rebuke him up to three times for ' +
   'the sake of relinquishing that. If while being rebuked up to three times he relinquishes that, that is good. If he does not ' +
   'relinquish (that), it entails initial and subsequent meetings of the Community.';
+
 patimokkhaEnglish[8] = '13. In case a bhikkhu living in dependence on a certain village or town is a corrupter of families, a man ' +
   'of depraved conduct — whose depraved conduct is both seen and heard about, and the families he has corrupted are both seen and ' +
   'heard about — the bhikkhus are to admonish him thus: "You, venerable sir, are a corrupter of families, a man of depraved conduct. ' +

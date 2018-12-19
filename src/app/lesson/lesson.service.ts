@@ -30,9 +30,13 @@ export class LessonService {
     topRow: 'qwprfyukl:[]'.split(''),
     homeRow: 'asdtghnioe\''.split(''),
     bottomRow: '`zxcvbjm,./'.split(''),
-    // TODO: add more words
-    homeRowWords: ['add', 'alaska', 'as', 'dad', 'flagfalls', 'gag', 'gal', 'hadassahs', 'haggadahs', 'hash', 'haskalah',
-      'saga', 'salad', 'salads'],
+    homeRowWords: ['add', 'add', 'again', 'against', 'age', 'agent', 'ago', 'ahead', 'and', 'as', 'at', 'attention',
+      'dad', 'data', 'dead', 'death', 'design', 'die', 'disease', 'do', 'dog', 'east', 'eat', 'edge', 'eight', 'end',
+      'gag', 'gas', 'get', 'go', 'good', 'hadassahs', 'haggadahs', 'hand', 'hang', 'hash', 'he', 'head', 'heat', 'high',
+      'his', 'hit', 'hot', 'idea', 'in', 'indeed', 'inside', 'instead', 'into', 'it', 'its', 'nation', 'need', 'night', 'no',
+      'none', 'not', 'note', 'nothing', 'oh', 'on', 'one', 'onto', 'saga', 'sangha', 'sea', 'season', 'seat', 'see', 'seed',
+      'send', 'sense', 'sense', 'set', 'she', 'shoot', 'shot', 'side', 'sign', 'sing', 'sit', 'site', 'so', 'son', 'song',
+      'sonnet', 'soon', 'stage', 'stand', 'state', 'station', 'ten', 'tend', 'test', 'than', 'that', 'the', 'then'],
     texts: englishLong
   };
 

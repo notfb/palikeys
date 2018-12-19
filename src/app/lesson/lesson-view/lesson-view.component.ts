@@ -89,7 +89,7 @@ export class LessonViewComponent implements OnInit {
       key = '\n';
     }
 
-    if (this.keyboardMapping) {
+    if (this.keyboardMapping && (this.keyboardMapping as any) !== 'false') {
       key = this.keyboardMappingService.translate(key, this.keyboardMapping);
     }
 

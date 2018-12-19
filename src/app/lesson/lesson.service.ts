@@ -11,7 +11,7 @@ export class LessonService {
   // TODO: remove  this dirty hack and handle the focus issue properly
   keepFocus = true;
 
-  static readonly MAX_LESSON = 25;
+  static readonly MAX_LESSON = 30;
   static readonly LONG_LESSON_NUMBER = 23;
 
   private readonly qwerty = {
@@ -185,6 +185,21 @@ export class LessonService {
         break;
       case 25:
         text = layout.texts[2];
+        break;
+      case 26:
+        text = layout.texts[3];
+        break;
+      case 27:
+        text = layout.texts[4];
+        break;
+      case 28:
+        text = layout.texts[5];
+        break;
+      case 29:
+        text = layout.texts[6];
+        break;
+      case 30:
+        text = layout.texts[7];
         break;
 
       default:

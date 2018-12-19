@@ -202,15 +202,97 @@ patimokkhaEnglish[8] = '13. In case a bhikkhu living in dependence on a certain 
   'sake of relinquishing that. If while being rebuked up to three times he relinquishes that, that is good. If he does not relinquish ' +
   '(that), it entails initial and subsequent meetings of the Community.';
 
-patimokkhaPali[0] = '';
-patimokkhaPali[1] = '';
-patimokkhaPali[2] = '';
-patimokkhaPali[3] = '';
-patimokkhaPali[4] = '';
-patimokkhaPali[5] = '';
-patimokkhaPali[6] = '';
-patimokkhaPali[7] = '';
-patimokkhaPali[8] = '';
+// from http://www.palikanon.com/vinaya/patimokkha/patimokkha.pdf
+patimokkhaPali[0] = '2. Pārājikā-dhammā\nTatr’ime cattāro pārājikā dhammā uddesaŋ āgacchanti.\n\n' +
+  '1. Yo pana bhikkhu, bhikkhūnaŋ sikkhāsā- jīvasamāpanno, sikkhaŋ apaccakkhāya, dubbalyaŋ anāvīkatvā, methunaŋ dham- maŋ ' +
+  'patiseveyya, antamaso tiracchāna- gatāya’pi, pārājiko hoti asaŋvāso.\n\n' +
+  '2. Yo pana bhikkhu gāmā vā araññā vā, adinnaŋ theyyasaïkhātaŋ ādiyeyya, ya- thārūpe adinnādāne, rājāno coraŋ gahe- ' +
+  'tvā haneyyuŋ vā bandheyyuŋ vā pabbā- jeyyuŋ vā: “Coro’si, bālo’si, mūëho’si, theno’sī”ti, – tathārūpaŋ bhikkhu adin- naŋ ' +
+  'ādiyamāno, ayam’pi pārājiko hoti asaŋ-vāso.';
+
+patimokkhaPali[1] = '3. Yo pana bhikkhu sañcicca manussavig- gahaŋ jīvitā voropeyya, satthahārakaŋ vā’ssa pariyeseyya, ' +
+  'maraõavaõõaŋ vā saŋvaõõeyya, maraõāya vā samādapeyya: “Ambho purisa, kiŋ tuyh’iminā pāpakena dujjīvitena? Matan’te ' +
+  'jīvitā seyyo”ti – iti cittamano, cittasaïkappo, anekapariyā- yena maraõavaõõaŋ vā saŋvaõõeyya, ma- raõāya vā ' +
+  'samādapeyya, ayam’pi pārāji- ko hoti asaŋvāso.\n\n' +
+  '4. Yo pana bhikkhu, anabhijānaŋ, uttari- manussadhammaŋ attūpanāyikaŋ alam- ariyañāõadassanaŋ samudācareyya: “Iti jānāmi, ' +
+  'iti passāmī”ti, tato aparena sa- mayena –samanuggāhiyamāno vā asama- nuggāhiyamāno vā – āpanno visuddhā- pekkho evaŋ ' +
+  'vadeyya: “Ajānamevāhaŋ, āvuso, avacaŋ ‘jānāmi’, apassaŋ ‘passā- mi’. Tucchaŋ musā vilapin”ti, aññatra adhimānā, ayam’pi ' +
+  'pārājiko hoti asaŋvā- so.\n\n' +
+  'Uddiṭṭhā kho, āyasmanto, cattāro pārāji- kā dhammā. Yesaŋ bhikkhu aññataraŋ vā aññataraŋ vā āpajjitvā, na ' +
+  'labhati bhik- khūhi saddhiŋ saŋvāsaŋ. Yathā pure, tathā pacchā, pārājiko hoti asaŋvāso.';
+
+patimokkhaPali[2] = '3. Saṅghādisesā-dhammā\n\n' +
+  'Ime kho pan’āyasmanto, terasa saïghādi- sesā dhammā uddesaŋ āgacchanti.\n\n' +
+  '1. Sañcetanikā sukkavisaṭṭhi, aññatra su- pinantā, saïghādiseso.\n\n' +
+  '2. Yo pana bhikkhu, otiõõo, vipariõatena cittena, mātugāmena saddhiŋ kāyasaŋsag- gaŋ samāpajjeyya, hatthagāhaŋ ' +
+  'vā veõi- gāhaŋ vā, aññatarassa vā aññatarassa vā aïgassa parāmasanaŋ, saïghādiseso.\n\n' +
+  '3. Yo pana bhikkhu, otiõõo, vipariõatena cittena, mātugāmaŋ duṭṭhullāhi vācāhi obhāseyya, yathā taŋ yuvā yuvatiŋ ' +
+  'methu- nūpasaŋhitāhi, saïghādiseso.\n\n' +
+  '4. Yo pana bhikkhu, otiõõo, vipariõatena cittena, mātugāmassa santike attakāma- pāricariyāya vaõõaŋ bhāseyya: ' +
+  '“Etadag- gaŋ, bhagini, pāricariyānaŋ yā mādisaŋ, sīlavantaŋ, kalyāõadhammaŋ, brahmacā- riŋ, etena dhammena ' +
+  'paricareyyā”ti, me- thunūpasaŋhitena, saïghādiseso.';
+
+patimokkhaPali[3] = '5. Yo pana bhikkhu sañcarittaŋ samāpaj- jeyya, itthiyā vā purisamatiŋ, purisassa vā itthimatiŋ ' +
+  'jāyattane vā jārattane vā, anta- maso taïkhaõikāya’pi, saïghādiseso.\n\n' +
+  '6. Saññācikāya pana bhikkhunā kuṭiŋ kā- rayamānena assāmikaŋ, attuddesaŋ, pa- māõikā kāretabbā. Tatr’idaŋ pamāõaŋ: ' +
+  'Dīghaso dvādasavidatthiyo sugatavidat- thiyā, tiriyaŋ satt’antarā. Bhikkhū abhi- netabbā vatthudesanāya. Tehi ' +
+  'bhikkhūhi vatthuŋ desetabbaŋ anārambhaŋ, sapa- rikkamanaŋ. Sārambhe ce bhikkhu vat- thusmiŋ aparikkamane ' +
+  'saññācikāya kuṭiŋ kāreyya, bhikkhū vā anabhineyya vatthu- desanāya, pamāõaŋ vā atikkāmeyya, saï- ghādiseso.\n\n' +
+  '7. Mahallakaŋ pana bhikkhunā vihāraŋ kārayamānena sassāmikaŋ, attuddesaŋ, bhikkhū abhinetabbā vatthudesanāya. ' +
+  'Te- hi bhikkhūhi vatthuŋ desetabbaŋ anāram- bhaŋ, saparikkamanaŋ. Sārambhe ce bhik- khu vatthusmiŋ aparikkamane ' +
+  'mahalla- kaŋ vihāraŋ kāreyya, bhikkhū vā anabhi- neyya vatthudesanāya, saïghādiseso.\n\n' +
+  '8. Yo pana bhikkhu bhikkhuŋ duṭṭho, doso, appatīto amūlakena pārājikena dhamme- na anuddhaŋseyya: ‘App’eva nāma ' +
+  'naŋ imamhā brahmacariyā cāveyyan’ ti, tato aparena samayena –samanuggāhiyamāno vā asamanuggāhiyamāno vā – ' +
+  'amūlakañ- c’eva taŋ adhikaraõaŋ hoti, bhikkhu ca dosaŋ patiṭṭhāti, saïghādiseso.\n\n';
+
+patimokkhaPali[4] = '9. Yo pana bhikkhu bhikkhuŋ duṭṭho, doso, appatīto aññabhāgiyassa adhikaraõassa kiñci desaŋ ' +
+  'lesamattaŋ upādāya pārājike- na dhammena anuddhaŋseyya: ‘App’eva nāma naŋ imamhā brahmacariyā cāvey- yan’ti, ' +
+  'tato aparena samayena – saman- uggāhiyamāno vā asamanuggāhiyamāno vā – aññabhāgiyaŋ c’eva taŋ adhikaraõaŋ hoti, ' +
+  'koci deso lesamatto ' +
+  'upādinno bhik- khu ca dosaŋ patiṭṭhāti, saïghādiseso.\n\n' +
+  '10. Yo pana bhikkhu samaggassa saïgh- assa bhedāya parakkameyya, bhedana- saŋvattanikaŋ vā ' +
+  'adhikaraõaŋ samādāya paggayha tiṭṭheyya, so bhikkhu bhikkhūhi evamassa vacanīyo:“Mā, āyasmā, samag- gassa saïghassa ' +
+  'bhedāya parakkami, bhe- danasaŋvattanikaŋ vā adhikaraõaŋ samā- dāya paggayha aṭṭhāsi. Samet’āyasmā saïghena, samaggo ' +
+  'hi saïgho sammoda- māno, avivadamāno, ekuddeso phāsu vi- haratī”ti. Evañca so bhikkhu bhikkhūhi vuccamāno tath’eva ' +
+  'paggaõheyya, so bhikkhu bhikkhūhi yāvatatiyaŋ samanu- bhāsitabbo tassa paṭinissaggāya. Yāvata- tiyañce samanubhāsiyamāno ' +
+  'taŋ paṭinis- sajjeyya*, icc’etaŋ kusalaŋ. No ce paṭinis- sajjeyya, saïghādiseso.';
+
+patimokkhaPali[5] = '11. Tass’eva kho pana bhikkhussa bhikkhū honti anuvattakā, vaggavādakā, eko vā dve vā tayo vā. ' +
+  'Te evaŋ vadeyyuŋ: “Mā, āyasmanto, etaŋ bhikkhuŋ kiñci avacut- tha! Dhammavādī c’eso bhikkhu, vinaya- vādī c’eso ' +
+  'bhikkhu, amhākañ c’eso bhik- khu chandañca ruciñca ādāya voharati. Jānāti no bhāsati, amhākampetaŋ khama- tī”ti. ' +
+  'Te bhikkhū bhikkhūhi evamassu va- canīyā: “Mā, āyasmanto, evaŋ avacuttha. Na c’eso bhikkhu dhammavādī, na c’eso ' +
+  'bhikkhu vinayavādī. Mā āyasmantānam’pi saïghabhedo ruccittha. Samet’āyasman- tānaŋ saïghena, samaggo hi saïgho, ' +
+  'sam- modamāno, avivādamāno, ekuddeso phā- su viharatī”ti. Evañca te bhikkhū bhikkhū- hi vuccamānā tath’eva ' +
+  'paggaõheyyuŋ, te bhikkhū bhikkhūhi yāvatatiyaŋ samanu- bhāsitabbā tassa paṭinissaggāya. Yāvata- tiyañce ' +
+  'samanubhāsiyamānā taŋ paṭinis- sajjeyyuŋ, icc’etaŋ kusalaŋ. No ce paṭinis- sajjeyyuŋ, saïghādiseso.';
+
+patimokkhaPali[6] = '12. Bhikkhu pan’eva dubbacajātiko hoti, uddesapariyāpannesu sikkhāpadesu bhik- khūhi ' +
+  'sahadhammikaŋ vuccamāno attānaŋ avacanīyaŋ karoti:“Mā maŋ, āyasmanto, kiñci avacuttha kalyāõaŋ vā pāpakaŋ vā; ' +
+  'aham’p’āyasmante na kiñci vakkhāmi ka- lyāõaŋ vā pāpakaŋ vā. Viramath’āyasma- nto mama vacanāyā”ti. So bhikkhu ' +
+  'bhik- khūhi evamassa vacanīyo: “Mā, āyasmā, attānaŋ avacanīyaŋ akāsi, vacanīyameva āyasmā attānaŋ karotu. Āyasmā’pi ' +
+  'bhik- khū vadetu sahadhammena, bhikkhū’pi āyasmantaŋ vakkhanti sahadhammena. Evaŋ saŋvaḍḍhā hi tassa Bhagavato pari- ' +
+  'sā, yad’idaŋ aññamaññavacanena, añña- maññavuṭṭhāpanenā”ti. Evañca so bhik- khu bhikkhūhi vuccamāno tath’eva pag- ' +
+  'gaõheyya, so bhikkhu bhikkhūhi yāvatati- yaŋ samanubhāsitabbo tassa paṭinissag- gāya. Yāvatatiyañce samanubhāsiyamāno ' +
+  'taŋ paṭinissajjeyya icc’etaŋ kusalaŋ. No ce paṭinissajjeyya, saïghādiseso.';
+
+patimokkhaPali[7] = '13. Bhikkhu pan’eva aññataraŋ gāmaŋ vā nigamaŋvā upanissāya viharati, kuladū- sako, pāpasamācāro; ' +
+  'tassa kho pāpakā samācārā dissanti c’eva suyyanti ca, ku- lāni ca tena duṭṭhāni dissanti c’eva suyya- nti ca. ' +
+  'So bhikkhu bhikkhūhi evamassa va- canīyo:“Āyasmā kho kuladūsako pāpasa- mācāro. Āyasmato kho pāpakā samācārā ' +
+  'dissanti c’eva suyyanti ca, kulāni c’āyas- matā duṭṭhāni dissanti c’eva suyyanti ca. Pakkamat’āyasmā imamhā āvāsā. ' +
+  'Alan’te idha vāsenā”ti. Evañca so bhikkhu bhik- khūhi vuccamāno te bhikkhū evaŋ vadey- ya: “Chandagāmino ca bhikkhū, ' +
+  'dosagā- mino ca bhikkhū, mohagāmino ca bhik- khū, bhayagāmino ca bhikkhū. Tādisikāya āpattiyā ekaccaŋ pabbājenti ' +
+  'ekaccaŋ na pabbājentī”ti. So bhikkhu bhikkhūhi eva- massa vacanīyo: “Mā, āyasmā, evaŋ ava- ca. Na ca bhikkhū ' +
+  'chandagāmino, na ca bhikkhūdosagāmino, na ca bhikkhū moha- gāmino, na ca bhikkhū bhayagāmino. Ā- yasmā kho ' +
+  'kuladūsako, pāpasamācāro. Āyasmato kho pāpakā samācārā dissanti c’eva suyyanti ca, kulāni c’āyasmatā duṭ- ṭhāni ' +
+  'dissanti c’eva suyyanti ca. Pakka- mat’āyasmā imamhā āvāsā. Alaŋ te idha vāsenā”ti. Evañca so bhikkhu bhikkhūhi ' +
+  'vuccamāno tath’eva paggaõheyya, so bhikkhu bhikkhūhi yāvatatiyaŋ samanu- bhāsitabbo tassa paṭinissaggāya. Yāvata- ' +
+  'tiyañce samanubhāsiyamāno taŋ paṭinis-sajjeyya, icc’etaŋ kusalaŋ. No ce paṭinis- sajjeyya, saïghādiseso.';
+
+patimokkhaPali[8] = 'Uddiṭṭhā kho, āyasmanto, terasa saïghā- disesā dhammā. Nava paṭhamāpattikā, cattāro yāvatatiyakā. ' +
+  'Yesaŋ bhikkhu añ- ñataraŋ vā aññataraŋ vā āpajjitvā, yāva- tihaŋ jānaŋ paṭicchādeti, tāvatihaŋ tena bhikkhunā, ' +
+  'akāmā parivatthabbaŋ. Pari- vutthaparivāsena bhikkhunā uttariŋ chā- rattaŋ bhikkhumānattāya paṭipajjitabbaŋ. ' +
+  'Ciõõamānatto bhikkhu, yattha siyā vīsati- gaõo bhikkhusaïgho, tattha so bhikkhu abbhetabbo. Ekena’pi ce ūno ' +
+  'vīsatigaõo bhikkhusaïgho taŋ bhikkhuŋ abbheyya, so ca bhikkhu anabbhito te ca bhikkhū gā- rayhā. Ayaŋ tattha sāmīci.';
 
 paliLong = [...dn34Pali, ...patimokkhaPali];
 englishLong = [...dn34English, ...patimokkhaEnglish];

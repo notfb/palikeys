@@ -11,7 +11,9 @@ export class LessonService {
   // TODO: remove  this dirty hack and handle the focus issue properly
   keepFocus = true;
 
-  static readonly MAX_LESSON = 30;
+  // TODO: calc this value
+  static readonly MAX_LESSON = 34;
+
   static readonly LONG_LESSON_NUMBER = 23;
 
   private readonly qwerty = {
@@ -177,33 +179,12 @@ export class LessonService {
       case 22:
         chars = [...layout.homeRow, ...layout.topRow, ...layout.bottomRow, ...layout.numberRow];
         break;
-      case 23:
-        text = layout.texts[0];
-        break;
-      case 24:
-        text = layout.texts[1];
-        break;
-      case 25:
-        text = layout.texts[2];
-        break;
-      case 26:
-        text = layout.texts[3];
-        break;
-      case 27:
-        text = layout.texts[4];
-        break;
-      case 28:
-        text = layout.texts[5];
-        break;
-      case 29:
-        text = layout.texts[6];
-        break;
-      case 30:
-        text = layout.texts[7];
-        break;
-
       default:
-        throw new Error(`Invalid lesson number: ${lessonNumber}`);
+        if (lessonNumber - LessonService.LONG_LESSON_NUMBER < layout.texts.length) {
+          text = layout.texts[lessonNumber - LessonService.LONG_LESSON_NUMBER];
+        } else {
+          throw new Error(`Invalid lesson number: ${lessonNumber}`);
+        }
     }
     return {chars, words, text};
   }

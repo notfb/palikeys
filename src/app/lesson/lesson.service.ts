@@ -24,6 +24,19 @@ export class LessonService {
     texts: englishLong
   };
 
+  private readonly qwqr = {
+    // TODO: first key on number row is Tab, how to map that?
+    numberRow: '§1234567890-='.split(''),
+    topRow: 'qwprfyukl~[]'.split(''),
+    homeRow: 'asdtghnioe\''.split(''),
+    bottomRow: '`zxcvbjm,./'.split(''),
+    // TODO: add more words
+    homeRowWords: ['add', 'alaska', 'as', 'dad', 'flagfalls', 'gag', 'gal', 'hadassahs', 'haggadahs', 'hash', 'haskalah',
+      'saga', 'salad', 'salads'],
+    texts: englishLong
+  };
+
+
   private readonly paliMeat = {
     numberRow: '§1234567890-='.split(''),
     topRow: 'ūbokpvmurl[]'.split(''),
@@ -52,7 +65,7 @@ export class LessonService {
     texts: paliLong
   };
 
-  private readonly layouts = {qwerty: this.qwerty, paliMeat: this.paliMeat};
+  private readonly layouts = {qwerty: this.qwerty, qwpr: this.qwqr, paliMeat: this.paliMeat};
 
   layout(layoutType: KeyboardLayoutType): KeyboardLayout {
     const layout = this.layouts[layoutType];

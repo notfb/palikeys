@@ -29,7 +29,7 @@ export class LessonViewComponent implements OnInit {
 
   layoutType: KeyboardLayoutType = 'qwerty';
   layoutOptions: { name: string, value: KeyboardLayoutType }[] =
-    [{name: 'QWERTY', value: 'qwerty'}, {name: 'Pali Ṃeāt', value: 'paliMeat'}];
+    [{name: 'QWERTY', value: 'qwerty'}, {name: 'QWPR', value: 'qwpr'}, {name: 'Pali Ṃeāt', value: 'paliMeat'}];
 
   keyboardMapping: KeyboardMapping | false = false;
   keyboardMappingOptions: { name: string, value: KeyboardMapping }[] =

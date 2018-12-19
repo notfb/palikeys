@@ -1,4 +1,4 @@
-export type KeyboardLayoutType = 'qwerty' | 'paliMeat';
+export type KeyboardLayoutType = 'qwerty' | 'qwpr' | 'paliMeat';
 
 export interface KeyboardLayout {
   topRow: string[];

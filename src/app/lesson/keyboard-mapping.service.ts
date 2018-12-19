@@ -40,6 +40,7 @@ export class KeyboardMappingService {
     'm': 'y',
 
     // special mappings with ALT key
+    // TODO: implement
     '!h': 'ṇ',
     '!n': 'ṅ',
     '!f': 'ṭ',
@@ -47,9 +48,42 @@ export class KeyboardMappingService {
 
   };
 
+  private qwertyToQwpr: KeyboardMappingMap = {
+    'q': 'q',
+    'w': 'w',
+    'e': 'p',
+    'r': 'r',
+    't': 'f',
+    'y': 'y',
+    'u': 'u',
+    'i': 'k',
+    'o': 'l',
+    'p': ':',
+
+    'a': 'a',
+    's': 's',
+    'd': 'd',
+    'f': 't',
+    'g': 'g',
+    'h': 'h',
+    'j': 'n',
+    'k': 'i',
+    'l': 'o',
+
+    'z': 'z',
+    'x': 'x',
+    'c': 'c',
+    'v': 'v',
+    'b': 'b',
+    'n': 'j',
+    'm': 'm',
+  };
+
   private mappings = {
     qwertyToPaliMeat: this.qwertyToPaliMeat,
-    qwertzToPaliMeat: this.swapYwithZ(this.qwertyToPaliMeat)
+    qwertyToQwpr: this.qwertyToQwpr,
+    qwertzToPaliMeat: this.swapYwithZ(this.qwertyToPaliMeat),
+    qwertzToQwpr: this.swapYwithZ(this.qwertyToQwpr)
   };
 
   constructor() {

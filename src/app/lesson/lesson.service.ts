@@ -27,7 +27,7 @@ export class LessonService {
   private readonly qwqr = {
     // TODO: first key on number row is Tab, how to map that?
     numberRow: '§1234567890-='.split(''),
-    topRow: 'qwprfyukl~[]'.split(''),
+    topRow: 'qwprfyukl:[]'.split(''),
     homeRow: 'asdtghnioe\''.split(''),
     bottomRow: '`zxcvbjm,./'.split(''),
     // TODO: add more words

@@ -12,7 +12,7 @@ export class LessonService {
   keepFocus = true;
 
   // TODO: calc this value
-  static readonly MAX_LESSON = 34;
+  static readonly MAX_LESSON = 38;
 
   static readonly LONG_LESSON_NUMBER = 23;
 

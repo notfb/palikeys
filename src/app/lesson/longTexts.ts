@@ -202,6 +202,11 @@ patimokkhaEnglish[8] = '13. In case a bhikkhu living in dependence on a certain 
   'sake of relinquishing that. If while being rebuked up to three times he relinquishes that, that is good. If he does not relinquish ' +
   '(that), it entails initial and subsequent meetings of the Community.';
 
+patimokkhaEnglish[9] = 'TODO';
+patimokkhaEnglish[10] = 'TODO';
+patimokkhaEnglish[11] = 'TODO';
+patimokkhaEnglish[12] = 'TODO';
+
 // from Tan Ajahn Piyadhammo
 patimokkhaPali[0] = 'Okāsa me bhante thero detu pātimokkhaṃ kathaṃ kathetuṃ.\n' +
   'Uposathakaraṇato pubbe navavidhaṃ pubbakiccaṃ kātabbaṃ hoti:\n\n' +
@@ -329,7 +334,7 @@ patimokkhaPali[7] = '11. Tasseva kho pana bhikkhussa bhikkhū honti anuvattakā 
   'Evañca so bhikkhu bhikkhūhi vuccamāno tatheva paggaṇheyya, so bhikkhu bhikkhūhi yāvatatiyaṃ samanubhāsitabbo tassa ' +
   'paṭinissaggāya, yāvatatiyañce samanubhāsiyamāno taṃ paṭinissajjeyya, iccetaṃ kusalaṃ. No ce paṭinissajjeyya, saṅghādiseso.';
 
-// Lesson 35
+// Lesson 34 (35)
 patimokkhaPali[8] = '13. Bhikkhu paneva aññataraṃ gāmaṃ vā nigamaṃ vā upanissāya viharati kuladūsako pāpasamācāro, tassa kho ' +
   'pāpakā samācārā dissanti ceva suyyanti ca, kulāni ca tena duṭṭhāni dissanti ceva suyyanti ca, so bhikkhu bhikkhūhi evamassa ' +
   'vacanīyo: "Āyasmā kho kuladūsako pāpasamācāro, āyasmato kho pāpakā samācārā dissanti ceva suyyanti ca, kulāni cāyasmatā ' +
@@ -339,6 +344,65 @@ patimokkhaPali[8] = '13. Bhikkhu paneva aññataraṃ gāmaṃ vā nigamaṃ vā
   'So bhikkhu bhikkhūhi evamassa vacanīyo: "Māyasmā evaṃ avaca, na ca bhikkhū chandagāmino, na ca bhikkhū dosagāmino, na ca ' +
   'bhikkhū mohagāmino, na ca bhikkhū bhayagāmino, āyasmā kho kuladūsako pāpasamācāro, āyasmato kho pāpakā samācārā dissanti ceva ' +
   'suyyanti ca, kulāni cāyasmatā duṭṭhāni dissanti ceva suyyanti ca, pakkamatāyasmā imamhā āvāsā, alaṃ te idha vāsenā"ti.';
+
+patimokkhaPali[9] = 'Evañca so bhikkhu bhikkhūhi vuccamāno tatheva paggaṇheyya, so bhikkhu bhikkhūhi yāvatatiyaṃ samanubhāsitabbo ' +
+  'tassa paṭinissaggāya, yāvatatiyañce samanubhāsiyamāno taṃ paṭinissajjeyya, iccetaṃ kusalaṃ. No ce paṭinissajjeyya, saṅghādiseso.\n' +
+  'Uddiṭṭhā kho āyasmanto terasa saṅghādisesā dhammā nava paṭhamāpattikā, cattāro yāvatatiyakā. \n' +
+  'Yesaṃ bhikkhu aññataraṃ vā aññataraṃ vā āpajjitvā yāvatīhaṃ jānaṃ paṭicchādeti, tāvatīhaṃ tena bhikkhunā akāmā parivatthabbaṃ. \n' +
+  'Parivutthaparivāsena bhikkhunā uttari chārattaṃ bhikkhumānattāya paṭipajjitabbaṃ, ciṇṇamānatto bhikkhu yattha siyā vīsatigaṇo ' +
+  'bhikkhusaṅgho, tattha so bhikkhu abbhetabbo. \n' +
+  'Ekenapi ce ūno vīsatigaṇo bhikkhusaṅgho taṃ bhikkhuṃ abbheyya, so ca bhikkhu anabbhito, te ca bhikkhū gārayhā, ayaṃ tattha sāmīci.\n\n' +
+  'Tatth\'āyasmante pucchāmi: Kaccittha parisuddhā?\n' +
+  'Dutiyam\'pi pucchāmi: Kaccittha parisuddhā?\n' +
+  'Tatiyam\'pi pucchāmi: Kaccittha parisuddhā?\n' +
+  'Parisuddh\'etth\'āyasmanto, tasmā tuṇhī, evametaṃ dhārayāmi.\n' +
+  'Saṅghādisesuddeso niṭṭhito.';
+
+patimokkhaPali[10] = 'Ime kho panāyasmanto dve aniyatā dhammā uddesaṃ āgacchanti.\n\n' +
+  '1. Yo pana bhikkhu mātugāmena saddhiṃ eko ekāya raho paṭicchanne āsane alaṃkammaniye nisajjaṃ kappeyya, tamenaṃ saddheyyavacasā ' +
+  'upāsikā disvā tiṇṇaṃ dhammānaṃ aññatarena vadeyya pārājikena vā saṅghādisesena vā pācittiyena vā, nisajjaṃ bhikkhu paṭijānamāno ' +
+  'tiṇṇaṃ dhammānaṃ aññatarena kāretabbo pārājikena vā saṅghādisesena vā pācittiyena vā, yena vā sā saddheyyavacasā upāsikā vadeyya, ' +
+  'tena so bhikkhu kāretabbo, ayaṃ dhammo aniyato.\n\n' +
+  '2. Na heva kho pana paṭicchannaṃ āsanaṃ hoti nālaṃkammaniyaṃ, alañca kho hoti mātugāmaṃ duṭṭhullāhi vācāhi obhāsituṃ, yo ' +
+  'pana bhikkhu tathārūpe āsane mātugāmena saddhiṃ eko ekāya raho nisajjaṃ kappeyya, tamenaṃ saddheyyavacasā upāsikā disvā ' +
+  'dvinnaṃ dhammānaṃ aññatarena vadeyya saṅghādisesena vā pācittiyena vā, nisajjaṃ bhikkhu paṭijānamāno dvinnaṃ dhammānaṃ aññatarena ' +
+  'kāretabbo saṅghādisesena vā pācittiyena vā, yena vā sā saddheyyavacasā upāsikā vadeyya, tena so bhikkhu kāretabbo, ayampi ' +
+  'dhammo aniyato.\n' +
+  'Uddiṭṭhā kho āyasmanto dve aniyatā dhammā.\n' +
+  'Tatth\'āyasmante pucchāmi: Kaccittha parisuddhā?\n' +
+  'Dutiyam\'pi pucchāmi: Kaccittha parisuddhā?\n' +
+  'Tatiyam\'pi pucchāmi: Kaccittha parisuddhā?\n' +
+  'Parisuddh\'etth\'āyasmanto, tasmā tuṇhī, evametaṃ dhārayāmi.\n' +
+  'Aniyatuddeso niṭṭhito.\n';
+
+// 38
+patimokkhaPali[11] = 'Ime kho panāyasmanto tiṃsa nissaggiyā pācittiyā dhammā uddesaṃ āgacchanti.\n\n' +
+  '1. Niṭṭhitacīvarasmiṃ bhikkhunā ubbhatasmiṃ kathine dasāhaparamaṃ atirekacīvaraṃ dhāretabbaṃ, taṃ atikkāmayato nissaggiyaṃ ' +
+  'pācittiyaṃ.\n\n' +
+  '2. Niṭṭhitacīvarasmiṃ bhikkhunā ubbhatasmiṃ kathine ekarattampi ce bhikkhu ticīvarena vippavaseyya, aññatra bhikkhusammutiyā ' +
+  'nissaggiyaṃ pācittiyaṃ.\n\n' +
+  '3. Niṭṭhitacīvarasmiṃ bhikkhunā ubbhatasmiṃ kathine bhikkhuno paneva akālacīvaraṃ uppajjeyya, ākaṅkhamānena bhikkhunā ' +
+  'paṭiggahetabbaṃ, paṭiggahetvā khippameva kāretabbaṃ, no cassa pāripūri, māsaparamaṃ tena bhikkhunā taṃ cīvaraṃ nikkhipitabbaṃ ' +
+  'ūnassa pāripūriyā satiyā paccāsāya. Tato ce uttari nikkhipeyya satiyāpi paccāsāya, nissaggiyaṃ pācittiyaṃ.\n\n' +
+  '4. Yo pana bhikkhu aññātikāya bhikkhuniyā purāṇacīvaraṃ dhovāpeyya vā rajāpeyya vā ākoṭāpeyya vā, nissaggiyaṃ pācittiyaṃ.\n\n' +
+  '5. Yo pana bhikkhu aññātikāya bhikkhuniyā hatthato cīvaraṃ paṭiggaṇheyya aññatra pārivattakā, nissaggiyaṃ pācittiyaṃ.\n\n' +
+  '6. Yo pana bhikkhu aññātakaṃ gahapatiṃ vā gahapatāniṃ vā cīvaraṃ viññāpeyya aññatra samayā, nissaggiyaṃ pācittiyaṃ. ' +
+  'Tatthāyaṃ samayo: Acchinnacīvaro vā hoti bhikkhu, naṭṭhacīvaro vā - ayaṃ tattha samayo.';
+
+patimokkhaPali[12] = '7. Tañce aññātako gahapati vā gahapatānī vā bahūhi cīvarehi abhihaṭṭhuṃ pavāreyya, ' +
+  'santaruttaraparamaṃ tena bhikkhunā tato cīvaraṃ sāditabbaṃ. Tato ce uttari sādiyeyya, nissaggiyaṃ pācittiyaṃ.\n\n' +
+  '8. Bhikkhuṃ paneva uddissa aññātakassa gahapatissa vā gahapatāniyā vā cīvaracetāpannaṃ upakkhaṭaṃ hoti: ' +
+  '"Iminā cīvaracetāpannena cīvaraṃ cetāpetvā itthannāmaṃ bhikkhuṃ cīvarena acchādessāmī"ti. \n' +
+  'Tatra ce so bhikkhu pubbe appavārito upasaṅkamitvā cīvare vikappaṃ āpajjeyya \n' +
+  '"Sādhu vata maṃ āyasmā iminā cīvaracetāpannena evarūpaṃ vā evarūpaṃ vā cīvaraṃ cetāpetvā acchādehī"ti. ' +
+  'Kalyāṇakamyataṃ upādāya, nissaggiyaṃ pācittiyaṃ.\n\n' +
+  '9. Bhikkhuṃ paneva uddissa ubhinnaṃ aññātakānaṃ gahapatīnaṃ vā gahapatānīnaṃ vā paccekacīvaracetāpannāni upakkhaṭāni honti: ' +
+  '"Imehi mayaṃ paccekacīvaracetāpannehi paccekacīvarāni cetāpetvā itthannāmaṃ bhikkhuṃ cīvarehi acchādessāmā"ti.\n' +
+  'Tatra ce so bhikkhu pubbe appavārito upasaṅkamitvā cīvare vikappaṃ āpajjeyya:\n' +
+  '"Sādhu vata maṃ āyasmanto imehi paccekacīvaracetāpannehi evarūpaṃ vā evarūpaṃ vā cīvaraṃ cetāpetvā acchādetha ubhova ' +
+  'santā ekenā"ti. Kalyāṇakamyataṃ upādāya, nissaggiyaṃ pācittiyaṃ.';
+
+// TODO: Lesson 40.docx was empty?
 
 paliLong = [...dn34Pali, ...patimokkhaPali];
 englishLong = [...dn34English, ...patimokkhaEnglish];

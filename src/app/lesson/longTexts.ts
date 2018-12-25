@@ -223,14 +223,14 @@ patimokkhaPali[0] = 'Okāsa me bhante thero detu pātimokkhaṃ kathaṃ kathetu
 
 patimokkhaPali[1] = 'Bhikkhugaṇanā nāma imasmiṃ uposathagge uposathatthāya sannipatitā bhikkhū ettakā ti, bhikkhūnaṃ gaṇanā. ' +
   'Imasmiṃ pana uposathagge dasa bhikkhū sannipatitā honti. Iti sabbehi āyasmantehi bhikkhugaṇanā pi dhāretabbā. Evaṃ bhante/āvuso\n' +
-  'Bhikkhunīnamovādo pana idāni tāsaṃ n\'atthitāya n\'atthi \n' +
+  'Bhikkhunīnamovādo pana idāni tāsaṃ n\'atthitāya n\'atthi\n' +
   'Iti sakaraṇokāsānaṃ pubbakiccānaṃ katattā nikkaraṇokāsānaṃ pubbakiccānaṃ pakatiyā pariniṭṭhitattā evantaṃ nava-vidhaṃ ' +
-  'pubbakiccaṃ pariniṭṭhitaṃ hoti. \n' +
-  'Niṭṭhite ca pubbakicce: Sace so divaso cātuddasī-paṇṇarasī-sāmaggīnam-aññataro yathājja uposatho paṇṇaraso/cātuddaso. \n' +
+  'pubbakiccaṃ pariniṭṭhitaṃ hoti.\n' +
+  'Niṭṭhite ca pubbakicce: Sace so divaso cātuddasī-paṇṇarasī-sāmaggīnam-aññataro yathājja uposatho paṇṇaraso/cātuddaso.\n\n' +
   '1) Yāvatikā ca bhikkhū kammapattā saṅghuposathārahā cattāro vā tato vā atirekā pakatattā pārājikaṃ anāpannā saṅghena vā anukkhittā.\n' +
   '2) Te ca kho hatthapāsaṃ avijahitvā ekasīmāyaṃ ṭhitā. \n' +
   '3) Tesañ-ca vikālabhojanādivasena-vatthu-sabhāgāpattiyo ce na vijjanti. \n' +
-  '4) Tesañ-ca hatthapāse hatthapāsato bahikaraṇavasena vajjetabbo koci vajjanīyapuggalo ce n\'atthi. \n' +
+  '4) Tesañ-ca hatthapāse hatthapāsato bahikaraṇavasena vajjetabbo koci vajjanīyapuggalo ce n\'atthi. \n\n' +
   'Evan-taṃ uposathakammaṃ imehi catūhi lakkhaṇehi saṅgahitaṃ pattakallaṃ nāma hoti, kātuṃ yuttarūpaṃ. \n' +
   'Uposathakammassa pattakallattaṃ viditvā idāni kariyamāno uposatho saṅghena anumānetabbo. Evaṃ bhante/āvuso\n\n' +
   '[Pubbakaraṇa-pubbakiccāni samāpetvā imissa nisinnassa bhikkhusaṅghassa anumatiyā pātimokkhaṃ uddesituṃ ajjhesanaṃ karomi.]';
@@ -269,9 +269,9 @@ patimokkhaPali[3] = 'Tatrime cattāro pārājikā dhammā uddesaṃ āgacchanti.
   'Parisuddh\'etth\'āyasmanto, tasmā tuṇhī, evametaṃ dhārayāmi.\n' +
   'Pārājikuddeso niṭṭhito.\n';
 
-// 30
+// Lesson 30
 patimokkhaPali[4] = 'Okāsa me bhante thero detu pātimokkhaṃ kathaṃ kathetuṃ. \n' +
-  'Uposathakaraṇato pubbe navavidhaṃ pubbakiccaṃ kātabbaṃ hoti:\n' +
+  'Uposathakaraṇato pubbe navavidhaṃ pubbakiccaṃ kātabbaṃ hoti:\n\n' +
   '1. Taṇṭhānasammajjanañca\n' +
   '2. Tattha padīp\'ujjalanañca \n' +
   '3. Āsanapaññapanañca\n' +
@@ -280,21 +280,65 @@ patimokkhaPali[4] = 'Okāsa me bhante thero detu pātimokkhaṃ kathaṃ kathetu
   '6. Tesaññeva akatuposathānaṃ pārisuddhiyāpi āharaṇañca\n' +
   '7. Utukkhānañca \n' +
   '8. Bhikkhugaṇanā ca \n' +
-  '9. Bhikkhunīnamovādo cā\'ti.\n' +
+  '9. Bhikkhunīnamovādo cā\'ti.\n\n' +
   'Tattha purimāni cattāri bhikkhūnaṃ vattaṃ jānantehi ārāmikehi pi bhikkhūhi pi katāni pariniṭṭhitāni honti.\n' +
   'Chandāharaṇa pārisuddhi-āharaṇāni pana imissaṃ sīmāyaṃ hatthapāsaṃ vijahitvā nisinnānaṃ bhikkhūnaṃ abhāvato n\'atthi.\n' +
   'Utukkhānaṃ nāma ettakaṃ atikkantaṃ ettakaṃ avasiṭṭhan-ti; evaṃ utu-ācikkhanaṃ. Utūnīdha pana sāsane ' +
   'hemanta-gimha-vassānānaṃ vasena tīṇi honti.\n' +
   'Ayaṃ vassāntotu/hemantotu/gimhotu, asmiñ-ca utumhi aṭṭha uposathā, iminā pakkhena: eko uposatho sampatto, dve uposathā ' +
-  'atikkantā, satta uposathā avasiṭṭhā. Iti evaṃ sabbehi āyasmantehi utukkhānaṃ dhāretabbaṃ. Evaṃ bhante/āvuso\n';
+  'atikkantā, satta uposathā avasiṭṭhā. Iti evaṃ sabbehi āyasmantehi utukkhānaṃ dhāretabbaṃ. Evaṃ bhante/āvuso';
 
-patimokkhaPali[5] = '';
+patimokkhaPali[5] = 'Ime kho panāyasmanto terasa saṅghādisesā dhammā uddesaṃ āgacchanti.\n\n' +
+  '1. Sañcetanikā sukkavissaṭṭhi aññatra supinantā saṅghādiseso.\n\n' +
+  '2. Yo pana bhikkhu otiṇṇo vipariṇatena cittena mātugāmena saddhiṃ kāyasaṃsaggaṃ samāpajjeyya hatthaggāhaṃ vā veṇiggāhaṃ ' +
+  'vā aññatarassa vā aññatarassa vā aṅgassa parāmasanaṃ, saṅghādiseso.\n\n' +
+  '3. Yo pana bhikkhu otiṇṇo vipariṇatena cittena mātugāmaṃ duṭṭhullāhi vācāhi obhāseyya yathā taṃ yuvā yuvatiṃ methunupasaṃhitāhi, ' +
+  'saṅghādiseso.\n\n' +
+  '4. Yo pana bhikkhu otiṇṇo vipariṇatena cittena mātugāmassa santike attakāmapāricariyāya vaṇṇaṃ bhāseyya: ' +
+  '"Etadaggaṃ bhagini pāricariyānaṃ yā mādisaṃ sīlavantaṃ kalyāṇadhammaṃ brahmacāriṃ etena dhammena paricareyyā"ti ' +
+  'methunupasaṃhitena, saṅghādiseso.\n\n' +
+  'Yo pana bhikkhu sañcarittaṃ samāpajjeyya itthiyā vā purisamatiṃ purisassa vā itthimatiṃ, jāyattane vā jārattane vā, antamaso ' +
+  'taṅkhaṇikāyapi, saṅghādiseso.\n\n' +
+  '5. Yo pana bhikkhu sañcarittaŋ samāpajjeyya, itthiyā vā purisamatiŋ, purisassa vā itthimatiŋ, jāyattane vā jārattane vā, ' +
+  'antamaso taṅkhaṇikāyapi, saṅghādiseso.';
 
-patimokkhaPali[6] = '';
+patimokkhaPali[6] = '6. Saññācikāya pana bhikkhunā kuṭiṃ kārayamānena assāmikaṃ attuddesaṃ pamāṇikā kāretabbā, tatridaṃ pamāṇaṃ, ' +
+  'dīghaso dvādasa vidatthiyo sugatavidatthiyā, tiriyaṃ sattantarā, bhikkhū abhinetabbā vatthudesanāya, tehi bhikkhūhi vatthu ' +
+  'desetabbaṃ anārambhaṃ saparikkamanaṃ. Sārambhe ce bhikkhu vatthusmiṃ aparikkamane saññācikāya kuṭiṃ kāreyya, bhikkhū vā ' +
+  'anabhineyya vatthudesanāya, pamāṇaṃ vā atikkāmeyya, saṅghādiseso.\n\n' +
+  '7. Mahallakaṃ pana bhikkhunā vihāraṃ kārayamānena sassāmikaṃ attuddesaṃ bhikkhū abhinetabbā vatthudesanāya, tehi bhikkhūhi ' +
+  'vatthu desetabbaṃ anārambhaṃ saparikkamanaṃ. Sārambhe ce bhikkhu vatthusmiṃ aparikkamane mahallakaṃ vihāraṃ kāreyya, bhikkhū ' +
+  'vā anabhineyya vatthudesanāya, saṅghādiseso.\n\n' +
+  '8. Yo pana bhikkhu bhikkhuṃ duṭṭho doso appatīto amūlakena pārājikena dhammena anuddhaṃseyya "Appeva nāma naṃ imamhā ' +
+  'brahmacariyā cāveyyan"ti.tato aparena samayena samanuggāhīyamāno vā asamanuggāhīyamāno vā amūlakañceva taṃ adhikaraṇaṃ hoti, ' +
+  'bhikkhu ca dosaṃ patiṭṭhāti, saṅghādiseso.';
 
-patimokkhaPali[7] = '';
+patimokkhaPali[7] = '11. Tasseva kho pana bhikkhussa bhikkhū honti anuvattakā vaggavādakā eko vā dve vā tayo vā, te evaṃ ' +
+  'vadeyyuṃ: "Māyasmanto etaṃ bhikkhuṃ kiñci avacuttha, dhammavādī ceso bhikkhu, vinayavādī ceso bhikkhu, amhākañceso bhikkhu ' +
+  'chandañca ruciñca ādāya voharati, jānāti, no bhāsati, amhākampetaṃ khamatī"ti. Te bhikkhū bhikkhūhi evamassu vacanīyā: ' +
+  '"Māyasmanto evaṃ avacuttha, na ceso bhikkhu dhammavādī, na ceso bhikkhu vinayavādī, māyasmantānampi saṅghabhedo ruccittha, ' +
+  'sametāyasmantānaṃ saṅghena, samaggo hi saṅgho sammodamāno avivadamāno ekuddeso phāsu viharatī"ti.\n' +
+  'Evañca te bhikkhū bhikkhūhi vuccamānā tatheva paggaṇheyyuṃ, te bhikkhū bhikkhūhi yāvatatiyaṃ samanubhāsitabbā tassa ' +
+  'paṭinissaggāya, yāvatatiyañce samanubhāsiyamānā taṃ paṭinissajjeyyuṃ, iccetaṃ kusalaṃ. No ce paṭinissajjeyyuṃ, saṅghādiseso.\n\n' +
+  '12. Bhikkhu paneva dubbacajātiko hoti uddesapariyāpannesu sikkhāpadesu bhikkhūhi sahadhammikaṃ vuccamāno ' +
+  'attānaṃ avacanīyaṃ karoti: "Mā maṃ āyasmanto kiñci avacuttha kalyāṇaṃ vā pāpakaṃ vā, ahampāyasmante na kiñci vakkhāmi kalyāṇaṃ ' +
+  'vā pāpakaṃ vā, viramathāyasmanto mama vacanāyā"ti.\n' +
+  'So bhikkhu bhikkhūhi evamassa vacanīyo: "Māyasmā attānaṃ avacanīyaṃ akāsi, vacanīyamevāyasmā attānaṃ karotu, āyasmāpi bhikkhū ' +
+  'vadatu sahadhammena, bhikkhūpi āyasmantaṃ vakkhanti sahadhammena, evaṃ saṃvaddhā hi tassa bhagavato parisā yadidaṃ ' +
+  'aññamaññavacanena aññamaññavuṭṭhāpanenā"ti.\n' +
+  'Evañca so bhikkhu bhikkhūhi vuccamāno tatheva paggaṇheyya, so bhikkhu bhikkhūhi yāvatatiyaṃ samanubhāsitabbo tassa ' +
+  'paṭinissaggāya, yāvatatiyañce samanubhāsiyamāno taṃ paṭinissajjeyya, iccetaṃ kusalaṃ. No ce paṭinissajjeyya, saṅghādiseso.';
 
-patimokkhaPali[8] = '';
+// Lesson 35
+patimokkhaPali[8] = '13. Bhikkhu paneva aññataraṃ gāmaṃ vā nigamaṃ vā upanissāya viharati kuladūsako pāpasamācāro, tassa kho ' +
+  'pāpakā samācārā dissanti ceva suyyanti ca, kulāni ca tena duṭṭhāni dissanti ceva suyyanti ca, so bhikkhu bhikkhūhi evamassa ' +
+  'vacanīyo: "Āyasmā kho kuladūsako pāpasamācāro, āyasmato kho pāpakā samācārā dissanti ceva suyyanti ca, kulāni cāyasmatā ' +
+  'duṭṭhāni dissanti ceva suyyanti ca, pakkamatāyasmā imamhā āvāsā, alaṃ te idha vāsenā"ti.\n' +
+  'Evañca so bhikkhu bhikkhūhi vuccamāno te bhikkhū evaṃ vadeyya: "Chandagāmino ca bhikkhū, dosagāmino ca bhikkhū, mohagāmino ca ' +
+  'bhikkhū, bhayagāmino ca bhikkhū tādisikāya āpattiyā ekaccaṃ pabbājenti, ekaccaṃ na pabbājentī"ti.\n' +
+  'So bhikkhu bhikkhūhi evamassa vacanīyo: "Māyasmā evaṃ avaca, na ca bhikkhū chandagāmino, na ca bhikkhū dosagāmino, na ca ' +
+  'bhikkhū mohagāmino, na ca bhikkhū bhayagāmino, āyasmā kho kuladūsako pāpasamācāro, āyasmato kho pāpakā samācārā dissanti ceva ' +
+  'suyyanti ca, kulāni cāyasmatā duṭṭhāni dissanti ceva suyyanti ca, pakkamatāyasmā imamhā āvāsā, alaṃ te idha vāsenā"ti.';
 
 paliLong = [...dn34Pali, ...patimokkhaPali];
 englishLong = [...dn34English, ...patimokkhaEnglish];
